@@ -37,4 +37,3 @@ package-lock.json
 !.yarn/versions
 /.idea/
 dist
-.yarn
