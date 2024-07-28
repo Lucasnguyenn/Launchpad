@@ -1,0 +1,37 @@
+{
+  "info": {
+    "title": "Global Hub",
+    "symbol": "HUB",
+    "socialLinkList": [
+      {
+        "id": 0,
+        "path": "https://t.me/Global_Hub",
+        "src": "/src/images/icon/icon-telegram.svg",
+        "title": "Telegram"
+      },
+      {
+        "id": 1,
+        "path": "https://twitter.com/Global_Hub",
+        "src": "/src/images/icon/icon-twitter.svg",
+        "title": "Twitter"
+      },
+      {
+        "id": 2,
+        "path": "https://discord.com/invite/Global_Hub",
+        "src": "/src/images/icon/icon-discord.svg",
+        "title": "Discord"
+      }
+    ],
+    "description": "Global Hub content"
+  },
+  "supply": [
+    { "id": 0, "title": "Hard Cap", "value": "6000 Matic" },
+    { "id": 1, "title": "Amount For Sale", "value": "3,000,000 Matic" },
+    { "id": 2, "title": "Price", "value": "2 Matic" }
+  ],
+  "timeline": [
+    { "id": 0, "title": "Start Time", "time": "Apr 18th 2023 - 22:00" },
+    { "id": 1, "title": "End Time", "time": "Apr 18th 2023 - 22:00" },
+    { "id": 2, "title": "Token Allocation", "time": "Apr 18th 2023 - 22:00" }
+  ]
+}
