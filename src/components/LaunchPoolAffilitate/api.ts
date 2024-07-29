@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 //TODO ref
-// export const baseUrl = 'http://194.163.190.102:7070/api';
-export const baseUrl = 'http://localhost:7070';
+export const baseUrl = 'http://194.163.190.102:7070';
+// export const baseUrl = 'http://localhost:7070';
 
 interface AffiliateType {
   projectId: string;

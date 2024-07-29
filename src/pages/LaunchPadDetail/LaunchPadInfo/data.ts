@@ -21,8 +21,8 @@ async function fetcher(url: string) {
 export function useTokenomicData() {
   const data = useSWR(
     // 'https://gateway.simplymuch.vn/launchpad/api/projects/TREK/tokenomics',
-    // 'http://194.163.190.102:7070/api/projects/TREK/tokenomics',
-    'http://localhost:7070/api/projects/TREK/tokenomics',
+    'http://194.163.190.102:7070/api/projects/TREK/tokenomics',
+    // 'http://localhost:7070/api/projects/TREK/tokenomics',
     fetcher
   );
 

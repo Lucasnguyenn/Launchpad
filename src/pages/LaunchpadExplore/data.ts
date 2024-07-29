@@ -2,8 +2,8 @@ import useSWR from 'swr';
 import { ProjectResponse } from './type';
 
 // const baseUrl = 'https://gateway.simplymuch.vn';
-// const baseUrl = 'http://194.163.190.102:7070/api';
-export const baseUrl = 'http://localhost:7070/api';
+const baseUrl = 'http://194.163.190.102:7070/api';
+// export const baseUrl = 'http://localhost:7070/api';
 
 async function fetcher(url: string) {
   return fetch(url).then((res) => res.json());
