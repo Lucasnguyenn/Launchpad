@@ -30,6 +30,7 @@ import {
   useChainId,
   useContractRead,
   useContractReads,
+  useContractWrite,
 } from 'wagmi';
 
 export interface FormValueProps {
@@ -61,6 +62,12 @@ function CommitStakeCommit() {
   const rpcUrl = CHAIN[chainId].rpcUrl;
   const idoAddress = TOKEN_CONTRACT[chainId].IDO_ADDRESS;
 
+  const { writeAsync } = useContractWrite({
+    address: idoAddress as `0x${string}`,
+    abi: IDO_ABI as any,
+    functionName: 'stakeByNative',
+  });
+
   const balanceNativeValue = useMemo(() => {
     if (!data) {
       return 0;
@@ -74,12 +81,6 @@ function CommitStakeCommit() {
       ) / Math.pow(10, 6)
     );
   }, [data]);
-
-  const idoContract = getContract({
-    address: address as `0x${string}`,
-    abi: IDO_ABI as any,
-    chainId: chainId,
-  });
 
   const { refetch: refetchStakers } = useContractRead({
     address: idoAddress,
@@ -120,48 +121,20 @@ function CommitStakeCommit() {
 
   const handleSubmitData = useCallback(
     async (val: FormValueProps) => {
-      if (!idoContract || !address || !rpcUrl) {
+      if (!address || !rpcUrl) {
         return;
       }
       setIsLoading(true);
       try {
-        let hash;
         const amount_deposit = `0x${new BigNumber(val.value)
           .multipliedBy(Math.pow(10, 18))
           .toString(16)}`;
-
-        const provider = new ethers.providers.JsonRpcProvider(rpcUrl);
-        const contract = new ethers.Contract(idoAddress, idoAbi, provider);
-
-        const gasLimit = await contract.estimateGas.stakeByNative(
-          amount_deposit,
-          referrerAddress,
-          {
-            from: address,
-            value: amount_deposit,
-          }
-        );
-
-        // zero address : "0x0000000000000000000000000000000000000000"
-        const { request } = await prepareWriteContract({
-          address: idoAddress,
-          abi: IDO_ABI,
-          functionName: 'stakeByNative',
+        const { hash } = await writeAsync({
           args: [parseUnits(val.value, 18), referrerAddress as `0x${string}`],
           value: parseUnits(val.value, 18),
-          gas: BigInt(gasLimit.toHexString()),
-          gasPrice: BigInt(250_000_000),
-          type: 'legacy',
         });
 
-        const data = await writeContract(request);
-        hash = data.hash;
-
-        const receipt = await waitForTransaction({
-          hash: hash,
-        });
-
-        if (receipt.status === 'success') {
+        if (hash) {
           toast.dismiss();
           refetchStakers();
           refetchBalance();
@@ -178,7 +151,6 @@ function CommitStakeCommit() {
     [
       address,
       idoAddress,
-      idoContract,
       referrerAddress,
       refetchBalance,
       refetchStakers,

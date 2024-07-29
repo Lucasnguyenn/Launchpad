@@ -15,7 +15,7 @@ export function useReferralLink(chainId: number) {
   const { address } = useAccount();
 
   const data = useSWR<{ data: WalletItemType[] }>(
-    `${baseUrl}/api/user-projects/ido/referrer/${address}?chainId=${chainId}`,
+    `${baseUrl}/api/user-projects/TREK/referrer/${address}?chainId=${chainId}`,
     fetcher
   );
 

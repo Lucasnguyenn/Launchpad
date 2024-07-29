@@ -50,9 +50,9 @@ function LaunchPadDetailComponent() {
           </Tab.List>
 
           <Tab.Panels className="outline-none max-w-[1072px] px-[20px] w-full mx-auto">
-            <Tab.Panel>
+            {/* <Tab.Panel>
               <LaunchPadForm />
-            </Tab.Panel>
+            </Tab.Panel> */}
             <Tab.Panel>
               <LaunchPadHardCap />
             </Tab.Panel>
