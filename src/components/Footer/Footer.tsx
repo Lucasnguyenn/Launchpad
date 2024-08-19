@@ -1,120 +1,116 @@
+import { FC } from 'react';
+import { Container } from 'components/Container';
+import styles from './Footer.module.scss';
+import classNames from 'classnames';
+
 import telephone from 'images/icon/icon-contact.svg';
 import email from 'images/icon/icon-email.svg';
 import location from 'images/icon/icon-location.svg';
-import hubGlobal from 'images/logo/hub-global.png';
+import Unihub from 'images/logo/unihub.png';
+import { helpfulLinkItem, infoItem, shortcutItem } from 'contants/common';
+import { Text } from 'components/Text';
+import Icon from 'components/Icon';
 
-export function Footer() {
+interface FooterProps {
+  className?: string;
+}
+
+export const Footer: FC<FooterProps> = ({ className }) => {
   return (
-    <footer className="relative pb-[90px] pt-[48px] bg-[#292929]">
-      {/* img */}
-      <div className="relative max-w-[1202px] 2xl:max-w-full px-4 mx-auto 2xl:mx-[128px]">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_1fr_1fr]">
-          {/* footer col1  */}
-          <div className="">
-            <div>
-              <img src={hubGlobal} alt="hubGlobal" />
-              <h4 className="text-[24px] leading-[34px] text-[#D9D9D9] py-[8px]">
-                HUB GLOBAL
-              </h4>
+    <footer className={classNames(styles.footer, className)}>
+      <Container>
+        <div className={styles.footer_main}>
+          <div className={styles.logo_wrapper}>
+            <div className="flex items-center gap-5">
+              <img src={Unihub} alt="Footer logo" className="w-[62px] h-auto" />
+              <Text type="heading3-semi-bold" className="text-neutral-10 uppercase">
+                UNIHUB
+              </Text>
             </div>
-
-            <ul className="flex flex-col gap-[10px]">
-              <li className="text-[14px] leading-[20px] text-[#D9D9D9] font-varela">
-                © 2023
-              </li>
-            </ul>
+            <Text type="body2" className="text-white">
+              © 2023
+            </Text>
+            <a href={'#'}>
+              <Text className="underline text-white" type="body2">
+                ABOUT US
+              </Text>
+            </a>
           </div>
+          <div className={styles.info_wrapper}>
+            <div className={styles.col}>
+              <Text type="title1-semi-bold" font='montserratFont' className="text-white-70">
+                Shortcuts
+              </Text>
+              {shortcutItem.map((item, index) => (
+                <a key={index} href={item.link}>
+                  <Text type="body2">{item.label}</Text>
+                </a>
+              ))}
+            </div>
+            <div className={styles.col}>
+              <Text type="title1-semi-bold" font='montserratFont' className="text-white-70">
+                Helpful links
+              </Text>
+              {helpfulLinkItem.map((item, index) => (
+                <a key={index} href={item.link}>
+                  <Text type="body2">{item.label}</Text>
+                </a>
+              ))}
+            </div>
+            <div className={styles.col}>
+              <Text type="title1-semi-bold" font='montserratFont' className="text-white-70">
+                Contact
+              </Text>
+              <Text
+                className="flex items-center gap-2 text-neutral-10"
+                type="body2"
+              >
+                <Icon name="map-01" size={20} />
+                {infoItem.location}
+              </Text>
+              <a href={`tel: ${infoItem.phone}`}>
+                <Text
+                  className="flex items-center gap-2 text-neutral-10"
+                  type="body2"
+                >
+                  <Icon name="phone" className="text-white" />
+                  <span>{infoItem.phone}</span>
+                </Text>
+              </a>
 
-          {/* footer col2  */}
-
-          <div>
-            <h4 className="mb-4 text-[20px] leading-[32px] text-[#D9D9D9]">
-              Contents
-            </h4>
-
-            <ul className="flex flex-col gap-3">
-              <li className="text-[14px] font-varela leading-[20px] text-[#D9D9D9]">
-                Project name
-              </li>
-
-              <li className="text-[14px] font-varela leading-[20px] text-[#D9D9D9]">
-                Timeline
-              </li>
-
-              <li className="text-[14px] font-varela leading-[20px] text-[#D9D9D9]">
-                Affiliate program
-              </li>
-
-              <li className="text-[14px] font-varela leading-[20px] text-[#D9D9D9]">
-                FAQS
-              </li>
-            </ul>
-          </div>
-
-          {/* footer col3  */}
-
-          <div>
-            <h4 className="mb-4 text-[20px] leading-[32px] text-[#D9D9D9]">
-              Our partners
-            </h4>
-
-            <ul className="flex flex-col gap-3">
-              <li className="text-[14px] leading-[20px] text-[#D9D9D9]">
-                Rikkei
-              </li>
-
-              <li className="text-[14px] leading-[20px] text-[#D9D9D9]">FPT</li>
-
-              <li className="text-[14px] leading-[20px] text-[#D9D9D9]">
-                Kyber Network
-              </li>
-
-              <li className="text-[14px] leading-[20px] text-[#D9D9D9]">
-                VinaCapital
-              </li>
-            </ul>
-          </div>
-
-          {/* footer col4  */}
-
-          <div>
-            <h4 className="mb-4 text-[20px] leading-[32px] text-[#D9D9D9] font-harabaras">
-              Contacts
-            </h4>
-
-            <ul className="flex flex-col gap-3">
-              <li>
-                <img src={location} alt="location" />
-              </li>
-
-              <li>
-                <img src={telephone} alt="telephone" />
-              </li>
-
-              <li>
-                <img src={email} alt="email" />
-              </li>
-            </ul>
+              <a href={`mailto: ${infoItem.email}`}>
+                <Text
+                  className="flex items-center gap-2 text-neutral-10"
+                  type="body2"
+                >
+                  <Icon name="mail-05" />
+                  {infoItem.email}
+                </Text>
+              </a>
+            </div>
           </div>
         </div>
-
-        {/* bottom footer */}
-        <div className="mt-[114px] flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <p className="text-[14px] leading-[20px] font-inter text-transparent19">
-              Privacy Policy
-            </p>
-            <div className="w-[6px] h-[6px] rounded-full bg-transparent19" />
-            <p className="text-[14px] leading-[20px] font-inter text-transparent19">
-              Terms of Conditions
-            </p>
+        <div className={styles.extra}>
+          <div className="flex gap-2 md:gap-4">
+            <a href={'#'}>
+              <Text type="body2" className="text-white-70">
+                Private Policy
+              </Text>
+            </a>
+            <Text type="body2" className="text-white-70">
+              ·
+            </Text>
+            <a href={'#'}>
+              <Text type="body2" className="text-white-70">
+                Term of Conditions
+              </Text>
+            </a>
           </div>
-
-          <p className="text-[14px] leading-[20px] font-inter text-transparent19">
+          <Text type="body2" className="text-white-70">
             Reflect App, LLC. All rights reserved.
-          </p>
+          </Text>
         </div>
-      </div>
+      </Container>
     </footer>
   );
-}
+};

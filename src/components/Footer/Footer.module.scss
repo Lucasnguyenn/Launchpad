@@ -1,0 +1,56 @@
+@import '../../styles/responsive.scss';
+
+.footer {
+  width: 100%;
+  background-color: #000;
+  padding-top: 2.25rem;
+  padding-bottom: 2.5rem;
+  // z-index: 10;
+  position: relative;
+
+  &_main {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.75rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    .logo_wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .info_wrapper {
+      justify-content: space-between;
+      display: flex;
+      width: 100%;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      @include screen(sm) {
+        flex-wrap: nowrap;
+      }
+      @include screen(md) {
+        width: 70%;
+        justify-content: space-around;
+      }
+      .col {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        max-width: 250px;
+        gap: 0.5rem;
+      }
+    }
+  }
+  .extra {
+    border-top: 1px solid white;
+    padding-top: 1.75rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+    @include screen(sm) {
+      flex-direction: row;
+    }
+  }
+}
