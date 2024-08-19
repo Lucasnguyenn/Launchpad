@@ -5,14 +5,6 @@ import logo from 'images/avatar/logo_hub_dex.png';
 import { useCallback, useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useAccount, useConnect } from 'wagmi';
-import {
-  Button,
-  Menu,
-  MenuHandler,
-  MenuItem,
-  MenuList,
-  Typography,
-} from '@material-tailwind/react';
 import { useAccountModal, useConnectModal } from '@rainbow-me/rainbowkit';
 import classNames from 'classnames';
 
@@ -22,6 +14,7 @@ import { Container } from 'components/Container';
 import Unihub from 'images/logo/unihub.png';
 import { Text } from 'components/Text';
 import { navigatorItem } from 'contants/common';
+import { Button } from 'components/Button';
 
 function useMenuAnimation(isOpen: boolean) {
   const [scope, animate] = useAnimate();
@@ -46,7 +39,7 @@ function useMenuAnimation(isOpen: boolean) {
 }
 
 export function HeaderComponent() {
-    const location = useLocation();
+  const location = useLocation();
   //   const [isOpen, setIsOpen] = useState(false);
   //   const windowDimensions = window.innerWidth;
   //   const [currentAddress, setCurrentAddress] = useState('');
@@ -168,11 +161,18 @@ export function HeaderComponent() {
                     [styles.active]: location.pathname == item.link,
                   })}
                 >
-                  <Text type='heading6-bold'>
-                    {item.label}
-                  </Text>
+                  <Text type="heading6-bold">{item.label}</Text>
                 </a>
               ))}
+            </div>
+
+            <div className="flex items-center gap-5">
+              <Button type="outlined" size="medium" className='!px-10'>
+                Polygon
+              </Button>
+              <Button type="primary" size="medium" onClick={() => {}}>
+                Connect Wallet
+              </Button>
             </div>
           </div>
         </div>

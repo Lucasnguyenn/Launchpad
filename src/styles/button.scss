@@ -1,6 +1,6 @@
 .button {
   cursor: pointer;
-  border-radius: 30px;
+  border-radius: 14px;
   position: relative;
   transition: all 300ms;
   font-family: var(--fontMulish);
@@ -61,18 +61,18 @@
   background-color: var(--primary-blue);
   border: 1px solid var(--primary-blue);
   color: white;
-  padding: 10px 16px;
+  padding: 10px 20px;
 
   &:hover {
     background-color: var(--primary-blue-hover);
     border: 1px solid var(--primary-blue-hover);
   }
 
-  &:focus,
-  &:focus-visible {
-    background-color: var(--primary-main);
-    border: 1px solid var(--primary-main);
-  }
+//   &:focus,
+//   &:focus-visible {
+//     background-color: var(--primary-main);
+//     border: 1px solid var(--primary-main);
+//   }
 
   &.btnDisabled {
     background-color: var(--background-disabled) !important;
@@ -87,35 +87,36 @@
     background-color: var(--primary-blue-disabled);
   }
 
-  &.large {
-    padding: 10px 16px;
+  &.medium {
+    padding: 10px 20px;
   }
 
-  &.medium {
+  &.small {
     padding: 7px 12px;
   }
 }
 
 .outlined {
   background-color: inherit;
-  border: 1px solid var(--primary-blue);
+  border: 2px solid var(--primary-blue);
   color: var(--primary-blue);
-  padding: 10px 16px;
+  padding: 10px 20px;
 
   &:hover {
-    background-color: var(--primary-blue);
-    opacity: 0.1;
+    background-color: var(--primary-blue-hover-light);
+    border: 2px solid var(--primary-blue-hover-light);
+    color: white;
   }
 
-  &:focus,
-  &:focus-visible {
-    background-color: var(--primary-main);
-    border: 1px solid var(--primary-main);
-  }
+//   &:focus,
+//   &:focus-visible {
+//     background-color: var(--primary-main);
+//     border: 2px solid var(--primary-main);
+//   }
 
   &.btnDisabled {
     background-color: var(--background-disabled) !important;
-    border: 1px solid var(--background-disabled) !important;
+    border: 2px solid var(--background-disabled) !important;
     color: var(--text-disabled) !important;
     * {
       color: var(--text-disabled) !important;
@@ -126,11 +127,11 @@
     background-color: var(--primary-blue-disabled);
   }
 
-  &.large {
-    padding: 10px 16px;
+  &.medium {
+    padding: 10px 20px;
   }
 
-  &.medium {
+  &.small {
     padding: 7px 12px;
   }
 }

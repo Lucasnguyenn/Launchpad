@@ -58,11 +58,11 @@
     right: 0;
     transform: translateX(100%);
     transition: 0.5s;
+    backdrop-filter: blur(6px);
     &.active {
       transition: 0.5s;
       transform: translateX(0);
     }
-    backdrop-filter: blur(6px);
   }
   &_wrapper {
     margin-top: 25vh;
