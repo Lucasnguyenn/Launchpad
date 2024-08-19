@@ -111,6 +111,7 @@ export default {
       syne: ["Syne", "sans-serif"],
       harabaras: ["Harabaras", "sans-serif"],
       oxanium: ["Oxanium", "sans-serif"],
+      helvetica: ["Helvetica", "sans-serif"],
     },
     backgroundImage: {
       bgMedia: "linear-gradient(97deg, #162B8D 0.41%, #C11652 109.06%);",

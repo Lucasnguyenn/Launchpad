@@ -3,18 +3,18 @@ import cx from 'classnames';
 import { motion, useAnimate } from 'framer-motion';
 import logo from 'images/avatar/logo_hub_dex.png';
 import { useCallback, useEffect, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useAccount, useConnect } from 'wagmi';
-import { NavBarMenuData } from './data';
-import {
-  Button,
-  Menu,
-  MenuHandler,
-  MenuItem,
-  MenuList,
-  Typography,
-} from '@material-tailwind/react';
 import { useAccountModal, useConnectModal } from '@rainbow-me/rainbowkit';
+import classNames from 'classnames';
+
+import styles from './Header.module.scss';
+import { Container } from 'components/Container';
+
+import Unihub from 'images/logo/unihub.png';
+import { Text } from 'components/Text';
+import { navigatorItem } from 'contants/common';
+import { Button } from 'components/Button';
 
 function useMenuAnimation(isOpen: boolean) {
   const [scope, animate] = useAnimate();
@@ -39,80 +39,81 @@ function useMenuAnimation(isOpen: boolean) {
 }
 
 export function HeaderComponent() {
-  const [isOpen, setIsOpen] = useState(false);
-  const windowDimensions = window.innerWidth;
-  const [currentAddress, setCurrentAddress] = useState('');
-  const { address, isConnected } = useAccount();
-  const [status, setStatus] = useState('');
+  const location = useLocation();
+  //   const [isOpen, setIsOpen] = useState(false);
+  //   const windowDimensions = window.innerWidth;
+  //   const [currentAddress, setCurrentAddress] = useState('');
+  //   const { address, isConnected } = useAccount();
+  //   const [status, setStatus] = useState('');
 
-  const { openAccountModal } = useAccountModal();
-  const { openConnectModal } = useConnectModal();
-  const { error, isLoading } = useConnect();
+  //   const { openAccountModal } = useAccountModal();
+  //   const { openConnectModal } = useConnectModal();
+  //   const { error, isLoading } = useConnect();
 
-  useEffect(() => {
-    setCurrentAddress(address ?? '');
-  }, [address]);
+  //   useEffect(() => {
+  //     setCurrentAddress(address ?? '');
+  //   }, [address]);
 
-  useEffect(() => {
-    if (isConnected) {
-      setStatus('success');
-    }
+  //   useEffect(() => {
+  //     if (isConnected) {
+  //       setStatus('success');
+  //     }
 
-    if (error) {
-      setStatus('error');
-    }
+  //     if (error) {
+  //       setStatus('error');
+  //     }
 
-    setTimeout(() => {
-      setStatus('');
-    }, 2000);
-  }, [isConnected, error]);
+  //     setTimeout(() => {
+  //       setStatus('');
+  //     }, 2000);
+  //   }, [isConnected, error]);
 
-  const scope = useMenuAnimation(isOpen);
+  //   const scope = useMenuAnimation(isOpen);
 
-  const handleClick = useCallback(
-    (e: any) => {
-      const isInUse = scope.current.contains(e.target);
+  //   const handleClick = useCallback(
+  //     (e: any) => {
+  //       const isInUse = scope.current.contains(e.target);
 
-      if (isInUse) {
-        return;
-      }
+  //       if (isInUse) {
+  //         return;
+  //       }
 
-      setIsOpen(false);
-    },
-    [scope]
-  );
+  //       setIsOpen(false);
+  //     },
+  //     [scope]
+  //   );
 
-  useEffect(() => {
-    document.addEventListener('click', handleClick);
+  //   useEffect(() => {
+  //     document.addEventListener('click', handleClick);
 
-    return () => document.removeEventListener('click', handleClick);
-  }, [handleClick, scope]);
+  //     return () => document.removeEventListener('click', handleClick);
+  //   }, [handleClick, scope]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const elementNN = document
-        .getElementById('networkSwitch')
-        ?.shadowRoot?.querySelector('w3m-button-big');
+  //   useEffect(() => {
+  //     const interval = setInterval(() => {
+  //       const elementNN = document
+  //         .getElementById('networkSwitch')
+  //         ?.shadowRoot?.querySelector('w3m-button-big');
 
-      const elementButton = elementNN?.shadowRoot?.querySelector('button');
-      const elementImage = elementNN?.querySelector('w3m-network-image');
+  //       const elementButton = elementNN?.shadowRoot?.querySelector('button');
+  //       const elementImage = elementNN?.querySelector('w3m-network-image');
 
-      if (elementButton && elementImage) {
-        elementButton.style.height = windowDimensions <= 768 ? '38px' : '42px';
-        elementButton.style.backgroundColor = '#1E1E1E';
-        elementButton.style.borderRadius = '12px';
-        elementButton.style.padding = '17px 32px';
-        elementButton.style.minWidth = '167px';
-        elementImage.style.height = '0px';
-        elementImage.style.width = '6px';
-        elementImage.style.marginRight = '0px';
+  //       if (elementButton && elementImage) {
+  //         elementButton.style.height = windowDimensions <= 768 ? '38px' : '42px';
+  //         elementButton.style.backgroundColor = '#1E1E1E';
+  //         elementButton.style.borderRadius = '12px';
+  //         elementButton.style.padding = '17px 32px';
+  //         elementButton.style.minWidth = '167px';
+  //         elementImage.style.height = '0px';
+  //         elementImage.style.width = '6px';
+  //         elementImage.style.marginRight = '0px';
 
-        return clearInterval(interval);
-      }
-    }, 20);
+  //         return clearInterval(interval);
+  //       }
+  //     }, 20);
 
-    return () => clearInterval(interval);
-  }, [address, windowDimensions]);
+  //     return () => clearInterval(interval);
+  //   }, [address, windowDimensions]);
 
   // useEffect(() => {
   //   const interval = setInterval(() => {
@@ -136,100 +137,46 @@ export function HeaderComponent() {
   // }, []);
 
   return (
-    <header
-      id="header"
-      className="relative md:h-[120px] px-4 md:px-[48px] bg-black flex-between gap-[12px] xl:gap-[66px]"
-    >
-      <Link to="/" className="h-[76px] aspect-[197/76]">
-        <img src={logo} alt="IMG" className="w-full h-full" />
-      </Link>
+    <header id="header" className={styles.head}>
+      <Container>
+        <div className={styles.header_wrapper}>
+          <div className={styles.header}>
+            <a title="logo" href={'/'} className="flex items-center gap-2">
+              <img
+                src={Unihub}
+                alt="Main logo"
+                className="cursor-pointer h-12 w-auto"
+              />
+              <Text type="heading3-bold" className="uppercase text-white">
+                HUB
+              </Text>
+            </a>
 
-      {/* Main menu */}
-      <ul className="hidden xl:flex items-center justify-start gap-[12px] xl:gap-[17px] flex-1">
-        {NavBarMenuData.map((item) => {
-          return (
-            <li
-              key={item.id}
-              className="h-[56px] md:px-[20px] flex justify-center items-center"
-            >
-              <NavLink
-                to={item.path}
-                className={({ isActive }) => {
-                  return cx(
-                    'text-[20px] font-normal font-cabin leading-[24px] text-transparent16 hover:text-transparent17 transition-all',
-                    {
-                      'text-transparent17': isActive,
-                    }
-                  );
-                }}
-              >
-                {item.title}
-              </NavLink>
-            </li>
-          );
-        })}
-      </ul>
-      <div className="flex gap-4 lg:min-w-[200px] lg:justify-end">
-        {currentAddress ? (
-          <div className="flex gap-4 lg:justify-end">
-            <Button
-              variant="outlined"
-              color="white"
-              className="rounded-full uppercase text-[10px] py-2 px-3 lg:py-2 lg:px-5"
-              onClick={openAccountModal}
-              onResize={() => {}}
-              onResizeCapture={() => {}}
-            >
-              {currentAddress.slice(0, 2)}...{currentAddress.slice(-4)}
-            </Button>
-          </div>
-        ) : (
-          <Button
-            variant="outlined"
-            color="white"
-            className="rounded-full text-[10px] py-2 px-3 lg:py-2 lg:px-5"
-            onClick={openConnectModal}
-            onResize={() => {}}
-            onResizeCapture={() => {}}
-          >
-            Connect Wallet
-          </Button>
-        )}
-      </div>
-
-      {/* menu mobile */}
-      <div className="xl:hidden relative" ref={scope}>
-        <motion.button
-          whileTap={{ scale: 0.97 }}
-          onClick={() => {
-            setIsOpen(!isOpen);
-          }}
-          className="text-[15px] leading-5 text-black px-3 py-2 md:py-3 rounded-full bg-gray9 flex flex-row items-center gap-2"
-        >
-          <p className="xl:hidden block text-white">Menu</p>
-        </motion.button>
-
-        <ul
-          className="absolute right-0 top-[56px] bg-[cornsilk] p-6 rounded-2xl min-w-[320px] z-30 flex flex-col gap-2"
-          style={{
-            clipPath: 'inset(0% 0% 100% 100% round 10px)',
-          }}
-        >
-          {/* <li className="md:hidden block text-base text-grey6 mb-4">Menu</li> */}
-          {NavBarMenuData.map((item) => {
-            return (
-              <li key={item.id}>
-                <Link
-                  to={item.path}
-                  className="md:hidden w-full inline-block text-[20px] leading-[24px] text-[#9A9A9A]"
+            <div className={styles.menu}>
+              {navigatorItem.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.link}
+                  className={classNames(styles.link, {
+                    [styles.active]: location.pathname == item.link,
+                  })}
                 >
-                  {item.title}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+                  <Text type="heading6-bold">{item.label}</Text>
+                </a>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-5">
+              <Button type="outlined" size="medium" className='!px-10'>
+                Polygon
+              </Button>
+              <Button type="primary" size="medium" onClick={() => {}}>
+                Connect Wallet
+              </Button>
+            </div>
+          </div>
+        </div>
+      </Container>
     </header>
   );
 }

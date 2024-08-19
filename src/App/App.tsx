@@ -1,3 +1,7 @@
+import 'styles/tailwind.css';
+import 'styles/globals.scss';
+import '../styles/icons.scss';
+
 import '@rainbow-me/rainbowkit/styles.css';
 import { EthereumClient, w3mConnectors } from '@web3modal/ethereum';
 import { Web3Modal } from '@web3modal/react';
@@ -9,7 +13,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { SWRConfig } from 'swr';
-import './app.scss';
+
 
 import OurEcosystem from 'components/OurEcosystem/OurEcosystem';
 
@@ -93,40 +97,38 @@ function MainPageRedirect() {
 
 export default function App() {
   return (
-    <>
-      <WagmiConfig config={wagmiConfig}>
-        <RainbowKitProvider chains={chains}>
-          <SWRConfig>
-            <BrowserRouter>
-              <Header />
-              <MainPageRedirect />
-              <Footer />
+    <WagmiConfig config={wagmiConfig}>
+      <RainbowKitProvider chains={chains}>
+        <SWRConfig>
+          <BrowserRouter>
+            <Header />
+            <MainPageRedirect />
+            <Footer />
 
-              <ToastContainer
-                // transition={bounce}
-                position="top-center"
-                // autoClose={false}
-                hideProgressBar
-                newestOnTop={false}
-                closeOnClick={false}
-                draggable={false}
-                pauseOnHover
-                style={{ width: '350px' }}
-                closeButton={({ closeToast }) => {
-                  return (
-                    <button
-                      onClick={closeToast}
-                      className="oke flex-shrink-0 mt-[5px]"
-                    >
-                      <img src={iconClose} alt="IMG" />
-                    </button>
-                  );
-                }}
-              />
-            </BrowserRouter>
-          </SWRConfig>
-        </RainbowKitProvider>
-      </WagmiConfig>
-    </>
+            <ToastContainer
+              // transition={bounce}
+              position="top-center"
+              // autoClose={false}
+              hideProgressBar
+              newestOnTop={false}
+              closeOnClick={false}
+              draggable={false}
+              pauseOnHover
+              style={{ width: '350px' }}
+              closeButton={({ closeToast }) => {
+                return (
+                  <button
+                    onClick={closeToast}
+                    className="oke flex-shrink-0 mt-[5px]"
+                  >
+                    <img src={iconClose} alt="IMG" />
+                  </button>
+                );
+              }}
+            />
+          </BrowserRouter>
+        </SWRConfig>
+      </RainbowKitProvider>
+    </WagmiConfig>
   );
 }

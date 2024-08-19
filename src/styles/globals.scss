@@ -1,18 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Anek+Odia:wght@400;600;700&family=Inter:wght@400;600;700&family=Oxanium:wght@700&family=Cabin:wght@200;300;400;700&family=Syne:wght@700&family=Russo+One&family=Varela+Round:wght@400;700&display=swap');
+@import './reset.scss';
+@import './font.scss';
+@import './text.scss';
+@import './button.scss';
 
-/* start */
-@font-face {
-  font-family: 'Harabaras';
-  font-style: normal;
-  font-weight: 400;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url('../font/Harabaras.ttf') format('ttf');
+:root {
+  --primary-blue: #369cc6;
+  --primary-blue-hover: #2a7fa9;
+  --primary-blue-hover-light: #4ba9d9;
+
+  --background-disabled: #dddddd;
+  --text-disabled: #a0a0a0;
+
+  --neutral-10: #d9d9d9;
+  --white-70: #ffffffb2;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* end */
-
-
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+  font-feature-settings: 'salt' on;
+  font-size: 14px;
+  line-height: normal;
+  text-rendering: optimizeSpeed;
+}
 
 .animate__animated {
   -webkit-animation-duration: 1s;
