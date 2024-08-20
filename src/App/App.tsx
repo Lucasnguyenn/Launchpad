@@ -14,7 +14,6 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { SWRConfig } from 'swr';
 
-
 import OurEcosystem from 'components/OurEcosystem/OurEcosystem';
 
 import { Footer } from 'components/Footer/Footer';
@@ -25,16 +24,13 @@ import {
   walletConnectWallet,
 } from '@rainbow-me/rainbowkit/wallets';
 import {
-  Chain,
   connectorsForWallets,
-  getDefaultWallets,
-  getWalletConnectConnector,
   RainbowKitProvider,
-  Wallet,
 } from '@rainbow-me/rainbowkit';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
 import { sepolia } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
+import Ecosystem from 'pages/Ecosystem/Ecosystem';
 const projectId = '602b708df5872c6c542b65d09d7b990e';
 
 const supportedChain = [sepolia];
@@ -85,11 +81,11 @@ function MainPageRedirect() {
   return (
     <ScrollToTop>
       <Routes>
-        <Route index path="/" element={<Launchpad />} />
         <Route path="/hub-ido" element={<MainPageDetail />} />
         <Route path="/ecosystem" element={<OurEcosystem />} />
-        <Route path="/project" element={<Project />} />
-        <Route path="*" element={<Launchpad />} />
+        <Route path="/projects" element={<Project />} />
+        <Route path="/launchpad" element={<Launchpad />} />
+        <Route path="*" element={<Ecosystem />} />
       </Routes>
     </ScrollToTop>
   );

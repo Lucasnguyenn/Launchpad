@@ -640,4 +640,13 @@
   .grid-custom {
     grid-template-columns: repeat(2, minmax(max-content, 300px));
   }
+
+  .text-glow {
+    text-shadow: 0px 0px 5.595px #fff, 0px 0px 11.189px #fff,
+        0px 0px 39.163px #fff;
+}
+
+  .text-glow-2 {
+    text-shadow: 0px 0px 2.769px #fff, 0px 0px 5.539px #fff;
+  }
 }
