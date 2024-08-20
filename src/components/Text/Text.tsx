@@ -5,7 +5,9 @@ import classNames from 'classnames';
 interface TextProps {
   children: React.ReactNode;
   type?:
+    | 'heading0-bold'
     | 'heading1-extra-bold'
+    | 'heading1-bold'
     | 'heading2-bold'
     | 'heading3-bold'
     | 'heading3-semi-bold'

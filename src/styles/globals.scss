@@ -8,6 +8,9 @@
   --primary-blue-hover: #2a7fa9;
   --primary-blue-hover-light: #4ba9d9;
 
+  --background-main: #101720;
+  --background-dark: #121212b2;
+  --background-dark-lighter: #1a1a1a;
   --background-disabled: #dddddd;
   --text-disabled: #a0a0a0;
 
@@ -145,14 +148,42 @@ body {
   object-fit: contain;
 }
 
-.slick-slider{
+.slick-slider {
   overflow: hidden;
 }
 
-.slick-track{
+.slick-track {
   display: flex !important;
 }
 
-.slick-slide > div{
+.slick-slide > div {
   height: 100%;
+}
+
+tbody {
+  border-top: 1px solid var(--neutral-10);
+
+  tr:nth-child(even) {
+    & .status {
+      background-color: var(--background-dark);
+    }
+  }
+
+  tr:nth-child(odd) {
+    background-color: var(--background-dark);
+
+    & .status {
+      background-color: var(--background-dark-lighter);
+    }
+  }
+}
+
+th {
+  padding: 20px 0;
+}
+
+td {
+  padding: 16px 0;
+  text-align: center;
+  vertical-align: middle;
 }

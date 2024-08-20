@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      backgroundImage: {
+        "hero-1": "url('/src/images/homepage/hero1.jpg')",
+      },
       fontFamily: {
         montserat: ["Montserrat", "sans-serif"],
         syne: ["Syne", "sans-serif"],
