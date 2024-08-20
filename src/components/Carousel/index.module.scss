@@ -1,0 +1,71 @@
+@import "/src/styles/responsive.scss";
+
+.dots_wrapper {
+  display: flex;
+  gap: 0.5rem;
+  width: fit-content;
+
+  .dot {
+    cursor: pointer;
+    width: 2.5rem;
+    height: 4px;
+    background-color: var(--neutral-70);
+    transition: var(--transition);
+    &.active {
+      background-color: var(--primary-green);
+      transition: var(--transition);
+      transition: all 0.3s ease-in-out;
+
+      &.green {
+        background-color: var(--primary-green);
+      }
+      &.red {
+        background-color: var(--primary-red);
+      }
+    }
+
+    @include screen(md) {
+      width: 4rem;
+    }
+  }
+}
+.position_default {
+  justify-content: space-between;
+}
+.position_center {
+  justify-content: center;
+}
+.position_left {
+  justify-content: flex-start;
+}
+.hide {
+  display: none;
+}
+.arrows {
+  width: 48px;
+  height: 48px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: var(--transition);
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+  }
+
+  &:global(.slick-prev) {
+    left: 12px;
+  }
+
+  &:global(.slick-next) {
+    right: 12px;
+  }
+
+  &:before,
+  &::after {
+    display: none;
+  }
+}

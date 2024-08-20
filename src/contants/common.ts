@@ -4,6 +4,10 @@ export const navigatorItem = [
     link: '/',
   },
   {
+    label: 'Our ecosystem',
+    link: '/ecosystems',
+  },
+  {
     label: 'Our Projects',
     link: '/projects',
   },
@@ -11,11 +15,9 @@ export const navigatorItem = [
     label: 'Launchpad',
     link: '/launchpad',
   },
-  {
-    label: 'About',
-    link: '/about',
-  }
 ];
+
+
 
 export const breakpointItem = {
   sm: 640,

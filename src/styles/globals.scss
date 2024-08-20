@@ -144,3 +144,15 @@ body {
 .Toastify__toast-icon img {
   object-fit: contain;
 }
+
+.slick-slider{
+  overflow: hidden;
+}
+
+.slick-track{
+  display: flex !important;
+}
+
+.slick-slide > div{
+  height: 100%;
+}
