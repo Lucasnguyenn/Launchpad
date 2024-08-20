@@ -1,20 +1,20 @@
-import { Web3Button, Web3NetworkSwitch } from '@web3modal/react';
-import cx from 'classnames';
-import { motion, useAnimate } from 'framer-motion';
-import logo from 'images/avatar/logo_hub_dex.png';
 import { useCallback, useEffect, useState } from 'react';
+
+import { Web3Button, Web3NetworkSwitch } from '@web3modal/react';
+import { motion, useAnimate } from 'framer-motion';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useAccount, useConnect } from 'wagmi';
 import { useAccountModal, useConnectModal } from '@rainbow-me/rainbowkit';
 import classNames from 'classnames';
 
 import styles from './Header.module.scss';
+
 import { Container } from 'components/Container';
+import { Text } from 'components/Text';
+import { Button } from 'components/Button';
+import { navigatorItem } from 'contants/common';
 
 import Unihub from 'images/logo/unihub.png';
-import { Text } from 'components/Text';
-import { navigatorItem } from 'contants/common';
-import { Button } from 'components/Button';
 
 function useMenuAnimation(isOpen: boolean) {
   const [scope, animate] = useAnimate();
@@ -40,54 +40,54 @@ function useMenuAnimation(isOpen: boolean) {
 
 export function HeaderComponent() {
   const location = useLocation();
-  //   const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   //   const windowDimensions = window.innerWidth;
-  //   const [currentAddress, setCurrentAddress] = useState('');
-  //   const { address, isConnected } = useAccount();
-  //   const [status, setStatus] = useState('');
+  const [currentAddress, setCurrentAddress] = useState('');
+  const { address, isConnected } = useAccount();
+  const [status, setStatus] = useState('');
 
-  //   const { openAccountModal } = useAccountModal();
-  //   const { openConnectModal } = useConnectModal();
-  //   const { error, isLoading } = useConnect();
+  const { openAccountModal } = useAccountModal();
+  const { openConnectModal } = useConnectModal();
+  const { error, isLoading } = useConnect();
 
-  //   useEffect(() => {
-  //     setCurrentAddress(address ?? '');
-  //   }, [address]);
+  useEffect(() => {
+    setCurrentAddress(address ?? '');
+  }, [address]);
 
-  //   useEffect(() => {
-  //     if (isConnected) {
-  //       setStatus('success');
-  //     }
+  useEffect(() => {
+    if (isConnected) {
+      setStatus('success');
+    }
 
-  //     if (error) {
-  //       setStatus('error');
-  //     }
+    if (error) {
+      setStatus('error');
+    }
 
-  //     setTimeout(() => {
-  //       setStatus('');
-  //     }, 2000);
-  //   }, [isConnected, error]);
+    setTimeout(() => {
+      setStatus('');
+    }, 2000);
+  }, [isConnected, error]);
 
-  //   const scope = useMenuAnimation(isOpen);
+  const scope = useMenuAnimation(isOpen);
 
-  //   const handleClick = useCallback(
-  //     (e: any) => {
-  //       const isInUse = scope.current.contains(e.target);
+  const handleClick = useCallback(
+    (e: any) => {
+      const isInUse = scope.current.contains(e.target);
 
-  //       if (isInUse) {
-  //         return;
-  //       }
+      if (isInUse) {
+        return;
+      }
 
-  //       setIsOpen(false);
-  //     },
-  //     [scope]
-  //   );
+      setIsOpen(false);
+    },
+    [scope]
+  );
 
-  //   useEffect(() => {
-  //     document.addEventListener('click', handleClick);
+  useEffect(() => {
+    document.addEventListener('click', handleClick);
 
-  //     return () => document.removeEventListener('click', handleClick);
-  //   }, [handleClick, scope]);
+    return () => document.removeEventListener('click', handleClick);
+  }, [handleClick, scope]);
 
   //   useEffect(() => {
   //     const interval = setInterval(() => {
@@ -154,27 +154,67 @@ export function HeaderComponent() {
 
             <div className={styles.menu}>
               {navigatorItem.map((item, index) => (
-                <a
+                <NavLink
                   key={index}
-                  href={item.link}
+                  to={item.link}
                   className={classNames(styles.link, {
                     [styles.active]: location.pathname == item.link,
                   })}
                 >
                   <Text type="heading6-bold">{item.label}</Text>
-                </a>
+                </NavLink>
               ))}
             </div>
 
             <div className="flex items-center gap-5">
-              <Button type="outlined" size="medium" className='!px-10'>
+              <Button type="outlined" size="medium" className="!px-10">
                 Polygon
               </Button>
-              <Button type="primary" size="medium" onClick={() => {}}>
-                Connect Wallet
-              </Button>
+              {currentAddress ? (
+                <Button type="primary" size="medium" onClick={openAccountModal}>
+                  {currentAddress.slice(0, 2)}...{currentAddress.slice(-4)}
+                </Button>
+              ) : (
+                <Button type="primary" size="medium" onClick={openConnectModal}>
+                  Connect Wallet
+                </Button>
+              )}
             </div>
           </div>
+        </div>
+
+        {/* menu mobile */}
+        <div className="xl:hidden relative" ref={scope}>
+          <motion.button
+            whileTap={{ scale: 0.97 }}
+            onClick={() => {
+              setIsOpen(!isOpen);
+            }}
+            className="text-[15px] leading-5 text-black px-3 py-2 md:py-3 rounded-full bg-gray9 flex flex-row items-center gap-2"
+          >
+            <p className="xl:hidden block text-white">Menu</p>
+          </motion.button>
+
+          <ul
+            className="absolute right-0 top-[56px] bg-[cornsilk] p-6 rounded-2xl min-w-[320px] z-30 flex flex-col gap-2"
+            style={{
+              clipPath: 'inset(0% 0% 100% 100% round 10px)',
+            }}
+          >
+            {/* <li className="md:hidden block text-base text-grey6 mb-4">Menu</li> */}
+            {navigatorItem.map((item) => {
+              return (
+                <li key={item.link}>
+                  <Link
+                    to={item.link}
+                    className="md:hidden w-full inline-block text-[20px] leading-[24px] text-[#9A9A9A]"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </Container>
     </header>
