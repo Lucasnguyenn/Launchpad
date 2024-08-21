@@ -3,8 +3,6 @@ import 'styles/globals.scss';
 import '../styles/icons.scss';
 
 import '@rainbow-me/rainbowkit/styles.css';
-import { EthereumClient, w3mConnectors } from '@web3modal/ethereum';
-import { Web3Modal } from '@web3modal/react';
 import { MainPageDetail } from 'components/MainPageDetail/MainPage';
 import { ScrollToTop } from 'components/ScrollToTop';
 import iconClose from 'images/icon/close_line.svg';
@@ -13,8 +11,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { SWRConfig } from 'swr';
-
-import OurEcosystem from 'components/OurEcosystem/OurEcosystem';
 
 import { Footer } from 'components/Footer/Footer';
 import { Header } from 'components/Header';
@@ -84,7 +80,6 @@ function MainPageRedirect() {
       <Routes>
         <Route index path="/" element={<HomePage />} />
         <Route path="/hub-ido" element={<MainPageDetail />} />
-        <Route path="/ecosystem" element={<OurEcosystem />} />
         <Route path="/projects" element={<Project />} />
         <Route path="/launchpad" element={<Launchpad />} />
         <Route path="/ecosystems" element={<Ecosystem />} />
