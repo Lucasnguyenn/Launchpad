@@ -114,3 +114,133 @@ export const launchpadItem = [
       },
    
   ];
+
+
+  export const saleDetail = [
+    {
+      name: 'Soft Cap',
+      price:'50.000 USDT'
+    },
+    {
+      name: 'Hard Cap',
+      price:'200.000 USDT'
+    },
+    {
+      name: 'Amount for sale',
+      price:'100.000.000 ZAYA'
+    },
+    {
+      name: 'Minimum commit',
+      price:'100 USDT'
+    },
+    {
+      name: 'Maximum commit',
+      price:'10.000 USDT'
+    },
+    {
+      name: 'Price',
+      price:'0.2 USDT'
+    },
+  ]
+
+
+  export interface SliderProps {
+    id:string
+    date:string;
+    text:any;
+   }  
+   export const Timeline:SliderProps[] = [
+      {
+       id:"01",
+       date:"Nov 21, 2024 12:00PM UTC",
+       text:["Whitelist Round"],
+      },
+      {
+       id:"02",
+       date:"Nov 22, 2024 12:00PM UTC",
+       text:["Public Round"],
+      },
+      {
+       id:"03",
+       date:"Nov 23, 2024 12:00PM UTC",
+       text:["Complete"],
+      },
+      {
+        id:"04",
+        date:"Nov 24, 2024 12:00PM UTC",
+        text:["Public Round"],
+       },
+       {
+        id:"05",
+        date:"Nov 25, 2024 12:00PM UTC",
+        text:["Complete"],
+       },
+    ];
+
+
+  export const tabLaunchpad = [
+      {
+        id:1,
+        name: 'Launchpad info',
+      },
+      {
+        id:2,
+        name: 'Token info',
+      },
+    ];
+
+  export const contentLaunchpad = [
+    {
+      contents: [
+        {
+          id: 1,
+          title: 'Number of registration',
+        price:'1.000.000 Matic'
+        },
+        {
+          id: 2,
+          title: "Vesting",
+          price: '10.000 Matic'
+        },
+        {
+          id: 3,
+          title: "TGE",
+          price: '1.000.000 Matic'
+        },
+        {
+          id: 4,
+          title: "Subcription Rate",
+          price: '1 USDT = 5 ZAYA'
+        },
+      ],
+    },
+    {
+      contents: [
+        {
+          id: 1,
+          title: 'Token name',
+          price:'Zaya token'
+        },
+        {
+          id: 2,
+          title: "Token Symbol",
+          price: '10.000 Matic'
+        },
+        {
+          id: 3,
+          title: "Token Decimals",
+          price: '1.000.000 Matic'
+        },
+        {
+          id: 4,
+          title: "Total Supply",
+          price: '10.000 Matic'
+        },
+        {
+          id: 5,
+          title: "Network",
+          price: '1.000.000 Matic'
+        },
+      ],
+    },
+    ];

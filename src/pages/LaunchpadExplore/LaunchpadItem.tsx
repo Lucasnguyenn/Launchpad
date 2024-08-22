@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text } from 'components/Text';
+import { Link } from 'react-router-dom';
 
 interface ILaunchpadItem {
   background: string;
@@ -23,7 +24,10 @@ function LaunchpadItem({
   time,
 }: ILaunchpadItem) {
   return (
-    <div className="flex flex-col gap-[20px] w-[400px] m-auto p-[20px] bg-[#121212] rounded-[20px] cursor-pointer">
+    <Link
+      to={`/launchpad/${title}`}
+      className="flex flex-col gap-[20px] w-[400px] m-auto p-[20px] bg-[#121212] rounded-[20px] cursor-pointer"
+    >
       <img src={background} alt="" />
       <div className="flex gap-4">
         <img className="w-20 h-20 rounded-[10px]" src={logo} alt="" />
@@ -85,7 +89,7 @@ function LaunchpadItem({
           </Text>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

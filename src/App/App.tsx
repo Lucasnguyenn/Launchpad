@@ -28,6 +28,7 @@ import { sepolia } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 import Ecosystem from 'pages/Ecosystem/Ecosystem';
 import HomePage from 'pages/Home/Home';
+import LaunchpadDetail from 'pages/LaunchPadDetail/LaunchpadDetail';
 const projectId = '602b708df5872c6c542b65d09d7b990e';
 
 const supportedChain = [sepolia];
@@ -82,6 +83,7 @@ function MainPageRedirect() {
         <Route path="/hub-ido" element={<MainPageDetail />} />
         <Route path="/projects" element={<Project />} />
         <Route path="/launchpad" element={<Launchpad />} />
+        <Route path="/launchpad/:slug" element={<LaunchpadDetail />} />
         <Route path="/ecosystems" element={<Ecosystem />} />
       </Routes>
     </ScrollToTop>

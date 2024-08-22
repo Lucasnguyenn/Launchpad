@@ -1,0 +1,35 @@
+.timer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+  
+    .item_wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+  
+      .number_wrapper {
+        display: flex;
+        gap: 0.25rem;
+        align-items: center;
+  
+        .item {
+          display: block;
+          padding: 0.5rem;
+          border-radius: 0.25rem;
+          text-align: center;
+          min-width: 20px;
+          border: 1px solid rgba(255, 255, 255, 0.13);
+          background-color: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(5px);
+          font-weight: 700;
+          font-size: 20px;
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+  
