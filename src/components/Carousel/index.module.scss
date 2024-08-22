@@ -9,10 +9,10 @@
     cursor: pointer;
     width: 2.5rem;
     height: 4px;
-    background-color: var(--neutral-70);
+    background-color: #fff;
     transition: var(--transition);
     &.active {
-      background-color: var(--primary-green);
+      background-color: #369CC6;
       transition: var(--transition);
       transition: all 0.3s ease-in-out;
 

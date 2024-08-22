@@ -9497,6 +9497,7 @@ __metadata:
     react-select: "npm:5.2.1"
     react-slick: "npm:^0.30.2"
     react-tabs: "npm:3.2.3"
+    react-timer-hook: "npm:^3.0.7"
     react-toastify: "npm:^9.1.3"
     react-tooltip: "npm:^5.8.3"
     react-use: "npm:17.3.1"
@@ -13189,6 +13190,15 @@ __metadata:
   peerDependencies:
     react: ^16.3.0 || ^17.0.0-0
   checksum: 10/3821db45237ad8ecab51678ea184357109177f7cc81a397f388baf678b3584714b8d63e41f044691dbd0936e9e8a773bd5f26fad1ffe7c6d142839e5f0e32ccb
+  languageName: node
+  linkType: hard
+
+"react-timer-hook@npm:^3.0.7":
+  version: 3.0.7
+  resolution: "react-timer-hook@npm:3.0.7"
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: 10/36807a32245ca7d840805bc5e727951584cb40304331374b27e7b49ba77e820262ecaac90f6d0f1931991f7c9d3b6050cb89384a446812a4463ce890b1547332
   languageName: node
   linkType: hard
 
