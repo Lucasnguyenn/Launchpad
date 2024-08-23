@@ -1,62 +1,61 @@
-import projectItem from 'images/background/project-item.png';
-import polyogon from 'images/details/polygon-rounded.png';
-import iconBell from 'images/icon/icon-bell.png';
-import iconHeart from 'images/icon/icon-heart.svg';
-import { Link } from 'react-router-dom';
+import { Text } from 'components/Text';
 
 interface ProjectItemType {
-  title?: string;
-  sub?: string;
-  link?: string;
+  data: {
+    id: number;
+    title: string;
+    thumbnail: string;
+    cap: string;
+    tags: string[];
+    content: string;
+    raised: string;
+    investors: number;
+  };
 }
-const initSub =
-  'Nền tảng cá nhân hóa lộ trình học dựa trên tương tác người dùng được tạo ra với mong muốn giúp người dùng gia tăng thêm kiến thức, khả năng tự học, tạo động lực học cho mỗi cá nhân.';
-const initTitle = 'XPATH';
 
-export function ProjectItem(props: ProjectItemType) {
-  const { title = initTitle, sub = initSub, link } = props;
+export function ProjectItem({ data }: ProjectItemType) {
+  const { id, title, thumbnail, cap, tags, content, raised, investors } = data;
 
   return (
-    <div className="relative group h-[478px] w-full container-hover rounded-[18px] flex flex-col justify-between">
-      <img src={projectItem} alt="projectItem" className="absolute inset-0" />
+    <div className="min-w-[300px] w-full h-[500px] p-[16px] sm:p-[20px] rounded-2xl border border-solid border-[--white-10] flex flex-col gap-[12px]">
+      <div className="relative w-full">
+        <img
+          src={thumbnail}
+          alt="thumbnail"
+          className="w-full h-[228px] rounded-[20px] object-cover object-center"
+        />
 
-      <div className="relative flex justify-end items-center gap-[9px] mt-[6px] px-[22px]">
-        <div className="w-[40px] h-[36px] bg-[#58A1A0] rounded-[7px] box-shadow6 flex items-center justify-center">
-          <img
-            src={iconBell}
-            alt="iconBell"
-            className="w-[30px] aspect-[30/27]"
-          />
-        </div>
-
-        <div className="w-[40px] h-[36px] bg-[#58A1A0] rounded-[7px] box-shadow6 flex items-center justify-center">
-          <img
-            src={iconHeart}
-            alt="iconBell"
-            className="w-[26px] aspect-[26/22]"
-          />
+        <div className="absolute rounded-[10px] bg-[--background-dark] text-white top-5 left-5 p-2.5">
+          <Text type="body2">{cap}</Text>
         </div>
       </div>
 
-      <div className="absolute bottom-0 animated-hover xpath w-full">
-        <div className="group-hover:hidden pt-[13px] pl-[23px] pb-[15px] pr-[15px]">
-          <div className="flex items-center gap-[8px] mb-[13px]">
-            <img
-              src={polyogon}
-              alt="polyogon"
-              className="w-[29px] aspect-square rounded-full box-shadow2"
-            />
-            <h2 className="text-[24px] text-white">{title}</h2>
-          </div>
-          <p className="text-[15px] font-anek text-white">{sub}</p>
-        </div>
+      <Text type="heading4-semi-bold" className="text-primary md:!text-[30px]">
+        {title}
+      </Text>
 
-        <Link
-          to={link ?? ''}
-          className="hidden group-hover:flex absolute cursor-pointer inset-0 w-full h-full items-center justify-center"
-        >
-          <h4 className="text-[40px] text-white">SHOW MORE</h4>
-        </Link>
+      <div className="flex flex-wrap gap-[10px]">
+        {tags.map((tag, index) => (
+          <div
+            key={index}
+            className="rounded-[10px] p-[10px] text-white bg-[#3D3D3D]"
+          >
+            <Text type="body2">{tag}</Text>
+          </div>
+        ))}
+      </div>
+
+      <Text type="heading6-bold" className="!font-normal">
+        {content}
+      </Text>
+
+      <div className="mt-auto w-full pt-[10px] border-t border-solid border-white flex justify-between">
+        <Text type="body1" className="!font-light">
+          {raised} raised
+        </Text>
+        <Text type="body1" className="!font-light">
+          {investors} investors
+        </Text>
       </div>
     </div>
   );
