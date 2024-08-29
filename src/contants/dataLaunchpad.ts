@@ -1,7 +1,7 @@
 export const launchpadItem = [
     {
-      background: '/src/images/launchpad/bg-zaya.png',
-      logo: '/src/images/launchpad/logo-zaya.png',
+      background: '/images//launchpad/bg-zaya.png',
+      logo: '/images//launchpad/logo-zaya.png',
       title: 'ZAYA',
       tags: [
         'RWA',
@@ -13,8 +13,8 @@ export const launchpadItem = [
       time:'August 15, 2024 - 10:00 (UTC)'
     },
     {
-        background: '/src/images/launchpad/bg-reposwap.png',
-        logo: '/src/images/launchpad/logo-reposwap.png',
+        background: '/images//launchpad/bg-reposwap.png',
+        logo: '/images//launchpad/logo-reposwap.png',
         title: 'Reposwap',
         tags: [
           'DEX',
@@ -25,8 +25,8 @@ export const launchpadItem = [
         time:'September 9, 2024 - 10:00 (UTC)'
       },
       {
-        background: '/src/images/launchpad/bg-atr.png',
-        logo: '/src/images/launchpad/logo-atr.png',
+        background: '/images//launchpad/bg-atr.png',
+        logo: '/images//launchpad/logo-atr.png',
         title: 'CLAPART',
         tags: [
           'NFT',
@@ -38,8 +38,8 @@ export const launchpadItem = [
         time:'September 4, 2024 - 10:00 (UTC)'
       },
       {
-        background: '/src/images/launchpad/bg-cask.png',
-        logo: '/src/images/launchpad/logo-cask.png',
+        background: '/images//launchpad/bg-cask.png',
+        logo: '/images//launchpad/logo-cask.png',
         title: 'DIGICASK',
         tags: [
           'RWA',
@@ -50,8 +50,8 @@ export const launchpadItem = [
         time:'TBA'
       },
       {
-        background: '/src/images/launchpad/bg-utopia.png',
-        logo: '/src/images/launchpad/logo-utopia.png',
+        background: '/images//launchpad/bg-utopia.png',
+        logo: '/images//launchpad/logo-utopia.png',
         title: 'U-topia',
         tags: [
           'MediaFi',
@@ -63,8 +63,8 @@ export const launchpadItem = [
         time:'August 15, 2024 - 10:00 (UTC)'
       },
       {
-        background: '/src/images/launchpad/bg-libera.png',
-        logo: '/src/images/launchpad/logo-libera.png',
+        background: '/images//launchpad/bg-libera.png',
+        logo: '/images//launchpad/logo-libera.png',
         title: 'Libera',
         tags: [
           'AI',
@@ -75,8 +75,8 @@ export const launchpadItem = [
         time:'August 15, 2024 - 10:00 (UTC)'
       },
       {
-        background: '/src/images/launchpad/bg-reental.png',
-        logo: '/src/images/launchpad/logo-reental.png',
+        background: '/images//launchpad/bg-reental.png',
+        logo: '/images//launchpad/logo-reental.png',
         title: 'Reental',
         tags: [
           'RWA',
@@ -87,8 +87,8 @@ export const launchpadItem = [
         time:'TBA'
       },
       {
-        background: '/src/images/launchpad/bg-nomoex.png',
-        logo: '/src/images/launchpad/logo-nomoex.png',
+        background: '/images//launchpad/bg-nomoex.png',
+        logo: '/images//launchpad/logo-nomoex.png',
         title: 'ZAYA',
         tags: [
           'CEX',
@@ -100,8 +100,8 @@ export const launchpadItem = [
         time:'August 26, 2024 - 10:00 (UTC)'
       },
       {
-        background: '/src/images/launchpad/bg-coinpays.png',
-        logo: '/src/images/launchpad/logo-coinpays.png',
+        background: '/images//launchpad/bg-coinpays.png',
+        logo: '/images//launchpad/logo-coinpays.png',
         title: 'Coinpays',
         tags: [
           'RWA',

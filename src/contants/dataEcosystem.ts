@@ -1,24 +1,24 @@
 export const ecosystemItem = [
   {
-    image: '/src/images/ecosystem/hubLaunchpad.png',
+    image: '/images//ecosystem/hubLaunchpad.png',
     title: 'Hub Global Launchpad',
     description:
       'A fundraising launchpad for founders, VCs and individual Investors',
   },
   {
-    image: '/src/images/ecosystem/hubnetwork_1.png',
+    image: '/images//ecosystem/hubnetwork_1.png',
     title: 'Hub Network',
     description:
       'Community of Startup Clubs Members at universities in Vietnam',
   },
   {
-    image: '/src/images/ecosystem/hubMedia.png',
+    image: '/images//ecosystem/hubMedia.png',
     title: 'Hub Media',
     description:
       'A marketing agency to support startups with a range of campaigns',
   },
   {
-    image: '/src/images/ecosystem/hubAcademy.png',
+    image: '/images//ecosystem/hubAcademy.png',
     title: 'Hub Academy',
     description: 'Provide incubation programs and support (non) web3 startups',
   },
@@ -26,7 +26,7 @@ export const ecosystemItem = [
 
 export const achievedItem = [
   {
-    image: '/src/images/ecosystem/hubnetwork.png',
+    image: '/images//ecosystem/hubnetwork.png',
     title: 'Hub Network',
     description: [
       '25 Startup Clubs Members at universities are connected in Vietnam',
@@ -35,7 +35,7 @@ export const achievedItem = [
     ],
   },
   {
-    image: '/src/images/ecosystem/incubation.png',
+    image: '/images//ecosystem/incubation.png',
     title: 'Incubation Programs',
     description: [
       '220+ big incubation programs and  accelerations organized.',
@@ -43,7 +43,7 @@ export const achievedItem = [
     ],
   },
   {
-    image: '/src/images/ecosystem/media.png',
+    image: '/images//ecosystem/media.png',
     title: 'Media Initiatives',
     description: [
       '8 published episodes of Founder’s Friday series brings 78k followers.',
@@ -54,24 +54,24 @@ export const achievedItem = [
 
 export const partners = [
   {
-    image: '/src/images/ecosystem/Hold-Station.png',
+    image: '/images//ecosystem/Hold-Station.png',
   },
   {
-    image: '/src/images/ecosystem/kyber-Network.png',
+    image: '/images//ecosystem/kyber-Network.png',
   },
   {
-    image: '/src/images/ecosystem/Ninety-Eight.png',
+    image: '/images//ecosystem/Ninety-Eight.png',
   },
   {
-    image: '/src/images/ecosystem/Sandbox.png',
+    image: '/images//ecosystem/Sandbox.png',
   },
   {
-    image: '/src/images/ecosystem/Sky-Mavis.png',
+    image: '/images//ecosystem/Sky-Mavis.png',
   },
   {
-    image: '/src/images/ecosystem/Spore-Network.png',
+    image: '/images//ecosystem/Spore-Network.png',
   },
   {
-    image: '/src/images/ecosystem/vinacapital.png',
+    image: '/images//ecosystem/vinacapital.png',
   },
 ];

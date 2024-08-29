@@ -35,7 +35,7 @@ function LaunchpadDetail() {
             <div className="flex gap-4">
               <img
                 className="w-20 h-20 rounded-[10px]"
-                src={'/src/images/launchpad/logo-zaya.png'}
+                src={'/images//launchpad/logo-zaya.png'}
                 alt=""
               />
 
@@ -70,24 +70,16 @@ function LaunchpadDetail() {
               Decarbonization
             </Text>
             <div className="flex gap-4">
+              <img className="w-9 h-9" src={'/images//icon/Globe.png'} alt="" />
+              <img className="w-9 h-9" src={'/images//icon/xcom.png'} alt="" />
               <img
                 className="w-9 h-9"
-                src={'/src/images/icon/Globe.png'}
+                src={'/images//icon/discord.png'}
                 alt=""
               />
               <img
                 className="w-9 h-9"
-                src={'/src/images/icon/xcom.png'}
-                alt=""
-              />
-              <img
-                className="w-9 h-9"
-                src={'/src/images/icon/discord.png'}
-                alt=""
-              />
-              <img
-                className="w-9 h-9"
-                src={'/src/images/icon/twitter.png'}
+                src={'/images//icon/twitter.png'}
                 alt=""
               />
             </div>
@@ -95,7 +87,7 @@ function LaunchpadDetail() {
           <div className="w-1/2">
             <img
               className="w-full"
-              src={'/src/images/launchpad/bg-zaya.png'}
+              src={'/images//launchpad/bg-zaya.png'}
               alt=""
             />
           </div>

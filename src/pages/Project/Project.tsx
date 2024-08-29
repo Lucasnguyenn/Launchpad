@@ -12,7 +12,8 @@ const sampleData = [
     thumbnail: 'images/project/meta365.jpg',
     cap: '$10M Valuation Cap',
     tags: ['Web 3', 'RWA'],
-    content: 'Revolutionizing the real estate market by providing individual investors with a simple platform to build true passive income and long-term valu...',
+    content:
+      'Revolutionizing the real estate market by providing individual investors with a simple platform to build true passive income and long-term valu...',
     raised: '$350,000',
     investors: 20,
   },
@@ -22,7 +23,8 @@ const sampleData = [
     thumbnail: '/images/project/lexi.png',
     cap: '$10M Valuation Cap',
     tags: ['Web 3', 'ESG'],
-    content: 'Wireless Building Automation: Cost-effective Energy Management & Decarbonization',
+    content:
+      'Wireless Building Automation: Cost-effective Energy Management & Decarbonization',
     raised: '$34,211',
     investors: 31,
   },
@@ -42,7 +44,8 @@ const sampleData = [
     thumbnail: 'images/project/fualgems.jpg',
     cap: '$13M Valuation Cap',
     tags: ['Energy', 'Web 3', 'Technology'],
-    content: 'Wireless Building Automation: Cost-effective Energy Management & Decarbonizationdấdsadadladakdaldasklaaa',
+    content:
+      'Wireless Building Automation: Cost-effective Energy Management & Decarbonizationdấdsadadladakdaldasklaaa',
     raised: '$130,000',
     investors: 6,
   },
@@ -52,7 +55,8 @@ const sampleData = [
     thumbnail: 'images/project/zayaai.jpg',
     cap: '$1M Valuation Cap',
     tags: ['Web 3', 'AI'],
-    content: 'Wireless Building Automation: Cost-effective Energy Management & Decarbonizationsdsdsdaldsakdldlasak',
+    content:
+      'Wireless Building Automation: Cost-effective Energy Management & Decarbonizationsdsdsdaldsakdldlasak',
     raised: '$130,000',
     investors: 6,
   },
@@ -62,7 +66,8 @@ const sampleData = [
     thumbnail: 'images/project/coinpays.jpg',
     cap: '$10M Valuation Cap',
     tags: ['Web 3', 'Payments'],
-    content: 'Wireless Building Automation: Cost-effective Energy Management & Decarbonization',
+    content:
+      'Wireless Building Automation: Cost-effective Energy Management & Decarbonization',
     raised: '$130,000',
     investors: 31,
   },
@@ -89,7 +94,7 @@ export function Project() {
           </div>
 
           <img
-            src="/src/images/logo/hub-global-pixel.png"
+            src="/images//logo/hub-global-pixel.png"
             alt="logo"
             className="w-[300px] h-auto"
           />
