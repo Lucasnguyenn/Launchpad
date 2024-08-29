@@ -28,7 +28,7 @@ const coins: Coin[] = [
   {
     coin: {
       name: 'DIGICASK',
-      avatar: '/src/images/homepage/coins/digicask.jpg',
+      avatar: '/images/homepage/coins/digicask.jpg',
     },
     chain: 'BNB Chain',
     raise: '$1.5M',
@@ -38,7 +38,7 @@ const coins: Coin[] = [
   {
     coin: {
       name: 'REENTAL',
-      avatar: '/src/images/homepage/coins/reental.png',
+      avatar: '/images/homepage/coins/reental.png',
     },
     chain: 'Arbitrum',
     raise: '$1.5M',
@@ -48,7 +48,7 @@ const coins: Coin[] = [
   {
     coin: {
       name: 'LIBERIA',
-      avatar: '/src/images/homepage/coins/liberia.png',
+      avatar: '/images/homepage/coins/liberia.png',
     },
     chain: 'Polygon',
     raise: '$1.5M',
@@ -58,7 +58,7 @@ const coins: Coin[] = [
   {
     coin: {
       name: 'ZAYA',
-      avatar: '/src/images/homepage/coins/zaya.png',
+      avatar: '/images/homepage/coins/zaya.png',
     },
     chain: 'BNB Chain',
     raise: '2X',
