@@ -9,7 +9,7 @@ const sampleData = [
   {
     id: 1,
     title: 'Reental',
-    thumbnail: '/src/images/project/reental.png',
+    thumbnail: '/images//project/reental.png',
     cap: '$42M Valuation Cap',
     tags: ['Web 3', 'Real Estate', 'Fintech'],
     content: 'Tokenizing the $300tn real estate market, one property at a time',
@@ -39,7 +39,7 @@ export function Project() {
           </div>
 
           <img
-            src="/src/images/logo/hub-global-pixel.png"
+            src="/images//logo/hub-global-pixel.png"
             alt="logo"
             className="w-[300px] h-auto"
           />

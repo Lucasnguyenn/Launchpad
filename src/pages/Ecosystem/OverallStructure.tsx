@@ -21,7 +21,7 @@ function OverallStructure(props) {
       </div>
       <img
         className="m-auto"
-        src="/src/images/ecosystem/overStructure.png"
+        src="/images//ecosystem/overStructure.png"
         alt=""
       />
     </div>
