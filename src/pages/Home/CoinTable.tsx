@@ -18,7 +18,7 @@ const coins: Coin[] = [
   {
     coin: {
       name: 'GLAPART',
-      avatar: '/src/images/homepage/coins/clapart.jpg',
+      avatar: 'images/homepage/coins/clapart.jpg',
     },
     chain: 'BNB Chain',
     raise: '$200K',
