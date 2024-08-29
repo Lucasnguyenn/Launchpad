@@ -1,4 +1,5 @@
 import { Text } from 'components/Text';
+import { Link } from 'react-router-dom';
 
 interface ProjectItemType {
   data: {
@@ -10,14 +11,18 @@ interface ProjectItemType {
     content: string;
     raised: string;
     investors: number;
+    link?: string;
   };
 }
 
-export function ProjectItem({ data }: ProjectItemType) {
+export function ProjectItem({ data }: Readonly<ProjectItemType>) {
   const { id, title, thumbnail, cap, tags, content, raised, investors } = data;
 
   return (
-    <div className="min-w-[300px] w-full h-[500px] p-[16px] sm:p-[20px] rounded-2xl border border-solid border-[--white-10] flex flex-col gap-[12px]">
+    <Link
+      to={`/projects/${id}`}
+      className="min-w-[300px] w-full h-[500px] p-[16px] sm:p-[20px] rounded-2xl border border-solid border-[--white-10] flex flex-col gap-[12px] hover:bg-[--white-10]"
+    >
       <div className="relative w-full">
         <img
           src={thumbnail}
@@ -45,7 +50,7 @@ export function ProjectItem({ data }: ProjectItemType) {
         ))}
       </div>
 
-      <Text type="heading6-bold" className="!font-normal">
+      <Text type="body1" className="!font-normal line-clamp-3">
         {content}
       </Text>
 
@@ -57,6 +62,6 @@ export function ProjectItem({ data }: ProjectItemType) {
           {investors} investors
         </Text>
       </div>
-    </div>
+    </Link>
   );
 }
