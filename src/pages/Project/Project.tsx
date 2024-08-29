@@ -8,13 +8,63 @@ import { ProjectItem } from './ProjectItem';
 const sampleData = [
   {
     id: 1,
+    title: 'Meta365',
+    thumbnail: 'images/project/meta365.jpg',
+    cap: '$10M Valuation Cap',
+    tags: ['Web 3', 'RWA'],
+    content: 'Revolutionizing the real estate market by providing individual investors with a simple platform to build true passive income and long-term valu...',
+    raised: '$350,000',
+    investors: 20,
+  },
+  {
+    id: 2,
+    title: 'Lexi',
+    thumbnail: '/images/project/lexi.png',
+    cap: '$10M Valuation Cap',
+    tags: ['Web 3', 'ESG'],
+    content: 'Wireless Building Automation: Cost-effective Energy Management & Decarbonization',
+    raised: '$34,211',
+    investors: 31,
+  },
+  {
+    id: 3,
     title: 'Reental',
-    thumbnail: '/src/images/project/reental.png',
+    thumbnail: 'images/project/reental.png',
     cap: '$42M Valuation Cap',
     tags: ['Web 3', 'Real Estate', 'Fintech'],
     content: 'Tokenizing the $300tn real estate market, one property at a time',
     raised: '$188,975',
     investors: 183,
+  },
+  {
+    id: 4,
+    title: 'FuelGems',
+    thumbnail: 'images/project/fualgems.jpg',
+    cap: '$13M Valuation Cap',
+    tags: ['Energy', 'Web 3', 'Technology'],
+    content: 'Wireless Building Automation: Cost-effective Energy Management & Decarbonizationdấdsadadladakdaldasklaaa',
+    raised: '$130,000',
+    investors: 6,
+  },
+  {
+    id: 5,
+    title: 'ZayaAI',
+    thumbnail: 'images/project/zayaai.jpg',
+    cap: '$1M Valuation Cap',
+    tags: ['Web 3', 'AI'],
+    content: 'Wireless Building Automation: Cost-effective Energy Management & Decarbonizationsdsdsdaldsakdldlasak',
+    raised: '$130,000',
+    investors: 6,
+  },
+  {
+    id: 5,
+    title: 'Coinpays',
+    thumbnail: 'images/project/coinpays.jpg',
+    cap: '$10M Valuation Cap',
+    tags: ['Web 3', 'Payments'],
+    content: 'Wireless Building Automation: Cost-effective Energy Management & Decarbonization',
+    raised: '$130,000',
+    investors: 31,
   },
 ];
 
@@ -62,7 +112,7 @@ export function Project() {
           </div>
 
           {/* projects list */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {sampleData.map((project) => (
               <ProjectItem data={project} />
             ))}
