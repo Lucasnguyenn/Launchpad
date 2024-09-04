@@ -14,7 +14,7 @@ import { Text } from 'components/Text';
 import { Button } from 'components/Button';
 import { navigatorItem } from 'contants/common';
 
-import Unihub from 'images/logo/unihub.png';
+import Hubglobal from 'images/logo/hub-global.png';
 
 function useMenuAnimation(isOpen: boolean) {
   const [scope, animate] = useAnimate();
@@ -143,7 +143,7 @@ export function HeaderComponent() {
           <div className={styles.header}>
             <a title="logo" href={'/'} className="flex items-center gap-2">
               <img
-                src={Unihub}
+                src={Hubglobal}
                 alt="Main logo"
                 className="cursor-pointer h-12 w-auto"
               />
