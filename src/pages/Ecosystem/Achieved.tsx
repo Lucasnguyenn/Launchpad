@@ -11,16 +11,26 @@ interface IAchievedItem {
 const AchievedItem = ({ id, image, title, description }: IAchievedItem) => {
   return (
     <div
-      className={`flex items-center max-w-[1000px] m-auto justify-between mb-[60px] ${
+      className={`flex items-center max-lg:flex-col max-lg:gap-8 max-w-[1000px] m-auto justify-between mb-[60px] ${
         id % 2 === 0 ? '' : 'flex-row-reverse'
       }`}
     >
-      <img src={image} alt="" className="max-w-[300px]" />
+      <Text
+        element="h2"
+        className="text-[#369CC6] lg:hidden text-[40px] font-bold max-sm:!text-[24px]"
+      >
+        {title}
+      </Text>
+      <img src={image} alt="" className="sm:max-w-[300px] max-w-[200px]" />
       <div className="flex flex-col gap-4">
-        <Text type="heading2-bold" element="h2" className="text-[#369CC6]">
+        <Text
+          type="heading2-bold"
+          element="h2"
+          className="text-[#369CC6] max-lg:hidden"
+        >
           {title}
         </Text>
-        <ul className="flex flex-col gap-4 w-[550px] ml-4">
+        <ul className="flex flex-col gap-4 max-w-[550px] ml-4">
           {description.map((it: any, index: number) => {
             return (
               <li key={index} className="text-[20px] leading-8">
@@ -36,7 +46,7 @@ const AchievedItem = ({ id, image, title, description }: IAchievedItem) => {
 
 function Achieved(props) {
   return (
-    <div className="mt-[40px] border border-solid rounded-[20px] border-[#FFFFFF1A] p-[40px] bg-[#12121299]">
+    <div className="mt-[40px] border border-solid rounded-[20px] border-[#FFFFFF1A] lg:p-[40px]  p-[20px] bg-[#12121299]">
       <Text
         type="heading2-bold"
         element="h2"

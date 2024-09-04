@@ -13,8 +13,7 @@ import { Container } from 'components/Container';
 import { Text } from 'components/Text';
 import { Button } from 'components/Button';
 import { navigatorItem } from 'contants/common';
-
-import Unihub from 'images/logo/unihub.png';
+import Icon from 'components/Icon';
 
 function useMenuAnimation(isOpen: boolean) {
   const [scope, animate] = useAnimate();
@@ -143,7 +142,7 @@ export function HeaderComponent() {
           <div className={styles.header}>
             <a title="logo" href={'/'} className="flex items-center gap-2">
               <img
-                src={Unihub}
+                src={'images/logo/hub-global-pixel.png'}
                 alt="Main logo"
                 className="cursor-pointer h-12 w-auto"
               />
@@ -152,7 +151,7 @@ export function HeaderComponent() {
               </Text>
             </a>
 
-            <div className={styles.menu}>
+            <div className={classNames(styles.menu, 'max-lg:!hidden')}>
               {navigatorItem.map((item, index) => (
                 <NavLink
                   key={index}
@@ -166,7 +165,7 @@ export function HeaderComponent() {
               ))}
             </div>
 
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-5 max-lg:hidden">
               <Button type="outlined" size="medium" className="!px-10">
                 Polygon
               </Button>
@@ -180,41 +179,63 @@ export function HeaderComponent() {
                 </Button>
               )}
             </div>
+
+            {/* menu mobile */}
+            <div className="lg:hidden relative" ref={scope}>
+              <motion.button
+                whileTap={{ scale: 0.97 }}
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                }}
+                className="text-[15px] leading-5 px-3 py-2 md:py-3 rounded-full  flex flex-row items-center gap-2"
+              >
+                <Icon className="xl:hidden block text-white" name="menu-01" />
+              </motion.button>
+
+              <ul
+                className="fixed right-0 left-0 top-[60px] bg-black p-6 rounded-2xl z-30 flex flex-col gap-2"
+                style={{
+                  clipPath: 'inset(0% 0% 100% 100% round 10px)',
+                }}
+              >
+                {/* <li className="md:hidden block text-base text-grey6 mb-4">Menu</li> */}
+                {navigatorItem.map((item) => {
+                  return (
+                    <li key={item.link}>
+                      <Link
+                        to={item.link}
+                        className="lg:hidden w-full inline-block text-[20px] leading-[24px] text-[#9A9A9A]"
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  );
+                })}
+                <div className="flex items-center gap-5">
+                  <Button type="outlined" size="medium" className="!px-10">
+                    Polygon
+                  </Button>
+                  {currentAddress ? (
+                    <Button
+                      type="primary"
+                      size="medium"
+                      onClick={openAccountModal}
+                    >
+                      {currentAddress.slice(0, 2)}...{currentAddress.slice(-4)}
+                    </Button>
+                  ) : (
+                    <Button
+                      type="primary"
+                      size="medium"
+                      onClick={openConnectModal}
+                    >
+                      Connect Wallet
+                    </Button>
+                  )}
+                </div>
+              </ul>
+            </div>
           </div>
-        </div>
-
-        {/* menu mobile */}
-        <div className="xl:hidden relative" ref={scope}>
-          <motion.button
-            whileTap={{ scale: 0.97 }}
-            onClick={() => {
-              setIsOpen(!isOpen);
-            }}
-            className="text-[15px] leading-5 text-black px-3 py-2 md:py-3 rounded-full bg-gray9 flex flex-row items-center gap-2"
-          >
-            <p className="xl:hidden block text-white">Menu</p>
-          </motion.button>
-
-          <ul
-            className="absolute right-0 top-[56px] bg-[cornsilk] p-6 rounded-2xl min-w-[320px] z-30 flex flex-col gap-2"
-            style={{
-              clipPath: 'inset(0% 0% 100% 100% round 10px)',
-            }}
-          >
-            {/* <li className="md:hidden block text-base text-grey6 mb-4">Menu</li> */}
-            {navigatorItem.map((item) => {
-              return (
-                <li key={item.link}>
-                  <Link
-                    to={item.link}
-                    className="md:hidden w-full inline-block text-[20px] leading-[24px] text-[#9A9A9A]"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
         </div>
       </Container>
     </header>

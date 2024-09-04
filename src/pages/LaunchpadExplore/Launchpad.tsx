@@ -17,7 +17,7 @@ export function Launchpad() {
           Launchpad
         </Text>
 
-        <div className="grid grid-cols-3 gap-y-[50px] mt-[40px]">
+        <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-[30px] mt-[40px]">
           {launchpadItem.map((item, index) => {
             return <LaunchpadItem key={index} {...item} />;
           })}
