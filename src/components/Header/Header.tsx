@@ -13,6 +13,8 @@ import { Container } from 'components/Container';
 import { Text } from 'components/Text';
 import { Button } from 'components/Button';
 import { navigatorItem } from 'contants/common';
+
+import Hubglobal from 'images/logo/hub-global.png';
 import Icon from 'components/Icon';
 
 function useMenuAnimation(isOpen: boolean) {
@@ -142,7 +144,7 @@ export function HeaderComponent() {
           <div className={styles.header}>
             <a title="logo" href={'/'} className="flex items-center gap-2">
               <img
-                src={'images/logo/hub-global-pixel.png'}
+                src={Hubglobal}
                 alt="Main logo"
                 className="cursor-pointer h-12 w-auto"
               />
