@@ -22,9 +22,16 @@ export const Footer: FC<FooterProps> = ({ className }) => {
         <div className={styles.footer_main}>
           <div className={styles.logo_wrapper}>
             <div className="flex items-center gap-5">
-              <img src={Unihub} alt="Footer logo" className="w-[62px] h-auto" />
-              <Text type="heading3-semi-bold" className="text-neutral-10 uppercase">
-                UNIHUB
+              <img
+                src={'images/logo/hub-global-pixel.png'}
+                alt="Footer logo"
+                className="w-[62px] h-auto"
+              />
+              <Text
+                type="heading3-semi-bold"
+                className="text-neutral-10 uppercase"
+              >
+                HUB
               </Text>
             </div>
             <Text type="body2" className="text-white">
@@ -38,7 +45,11 @@ export const Footer: FC<FooterProps> = ({ className }) => {
           </div>
           <div className={styles.info_wrapper}>
             <div className={styles.col}>
-              <Text type="title1-semi-bold" font='montserratFont' className="text-white-70">
+              <Text
+                type="title1-semi-bold"
+                font="montserratFont"
+                className="text-white-70"
+              >
                 Shortcuts
               </Text>
               {shortcutItem.map((item, index) => (
@@ -48,7 +59,11 @@ export const Footer: FC<FooterProps> = ({ className }) => {
               ))}
             </div>
             <div className={styles.col}>
-              <Text type="title1-semi-bold" font='montserratFont' className="text-white-70">
+              <Text
+                type="title1-semi-bold"
+                font="montserratFont"
+                className="text-white-70"
+              >
                 Helpful links
               </Text>
               {helpfulLinkItem.map((item, index) => (
@@ -58,7 +73,11 @@ export const Footer: FC<FooterProps> = ({ className }) => {
               ))}
             </div>
             <div className={styles.col}>
-              <Text type="title1-semi-bold" font='montserratFont' className="text-white-70">
+              <Text
+                type="title1-semi-bold"
+                font="montserratFont"
+                className="text-white-70"
+              >
                 Contact
               </Text>
               <Text

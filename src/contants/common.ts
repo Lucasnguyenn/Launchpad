@@ -3,10 +3,7 @@ export const navigatorItem = [
     label: 'Home',
     link: '/',
   },
-  {
-    label: 'Our ecosystem',
-    link: '/ecosystems',
-  },
+ 
   {
     label: 'Our Projects',
     link: '/projects',
@@ -14,6 +11,10 @@ export const navigatorItem = [
   {
     label: 'Launchpad',
     link: '/launchpad',
+  },
+  {
+    label: 'About',
+    link: '/about',
   },
 ];
 
