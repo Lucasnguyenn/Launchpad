@@ -86,7 +86,7 @@ function MainPageRedirect() {
         <Route path="/projects/:id" element={<ProjectDetail />} />
         <Route path="/launchpad" element={<Launchpad />} />
         <Route path="/launchpad/:slug" element={<LaunchpadDetail />} />
-        <Route path="/ecosystems" element={<Ecosystem />} />
+        <Route path="/about" element={<Ecosystem />} />
       </Routes>
     </ScrollToTop>
   );

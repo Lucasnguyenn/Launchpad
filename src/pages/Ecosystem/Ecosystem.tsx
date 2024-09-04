@@ -23,7 +23,7 @@ function Ecosystem() {
         >
           Ecosystem Components
         </Text>
-        <div className="grid grid-cols-2 w-[1000px] mx-auto gap-[50px] mt-[40px]">
+        <div className="grid md:grid-cols-2 grid-cols-1 lg:w-[1000px] mx-auto gap-[50px] mt-[40px]">
           {ecosystemItem.map((item: any, index: number) => (
             <EcosystemItem key={index} {...item} />
           ))}

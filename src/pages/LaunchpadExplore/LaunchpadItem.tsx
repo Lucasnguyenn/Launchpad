@@ -26,7 +26,7 @@ function LaunchpadItem({
   return (
     <Link
       to={`/launchpad/${title}`}
-      className="flex flex-col gap-[20px] w-[400px] m-auto p-[20px] bg-[#121212] rounded-[20px] cursor-pointer"
+      className="flex flex-col gap-[20px] max-w-[400px] h-full m-auto p-[20px] bg-[#121212] rounded-[20px] cursor-pointer"
     >
       <img src={background} alt="" />
       <div className="flex gap-4">
@@ -66,7 +66,7 @@ function LaunchpadItem({
           <Text element="span" className="text-white !text-[18px]">
             Symbol:
           </Text>
-          <Text element="span" className="text-white !text-[18px]">
+          <Text element="span" className="text-white !text-[16px]">
             {symbol}
           </Text>
         </div>
@@ -75,7 +75,7 @@ function LaunchpadItem({
           <Text element="span" className="text-white !text-[18px]">
             Price:
           </Text>
-          <Text element="span" className="text-white !text-[18px]">
+          <Text element="span" className="text-white !text-[16px]">
             {price}
           </Text>
         </div>
@@ -84,7 +84,7 @@ function LaunchpadItem({
           <Text element="span" className="text-white !text-[18px]">
             Starts:
           </Text>
-          <Text element="span" className="text-white !text-[18px]">
+          <Text element="span" className="text-white !text-[16px]">
             {time}
           </Text>
         </div>
