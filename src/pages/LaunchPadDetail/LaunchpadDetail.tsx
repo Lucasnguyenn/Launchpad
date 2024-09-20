@@ -17,11 +17,9 @@ function LaunchpadDetail() {
   const { date, time } = getDateTimeFromString(deadline);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  console.log(contentLaunchpad[selectedIndex]?.contents);
-
   return (
     <div className={classNames(styles.background_image, 'py-[80px]')}>
-      <div className="max-w-[1160px] m-auto py-4">
+      <div className="max-w-[1160px] m-auto py-4 px-6">
         <Text
           type="heading2-bold"
           element="h2"
@@ -30,8 +28,8 @@ function LaunchpadDetail() {
           Launchpad
         </Text>
 
-        <div className="flex justify-between items-center mt-[40px]">
-          <div className="flex flex-col gap-8 w-1/2">
+        <div className="flex max-md:flex-col justify-between items-center gap-4 mt-[40px]">
+          <div className="flex flex-col gap-8 md:w-1/2">
             <div className="flex gap-4">
               <img
                 className="w-20 h-20 rounded-[10px]"
@@ -84,7 +82,7 @@ function LaunchpadDetail() {
               />
             </div>
           </div>
-          <div className="w-1/2">
+          <div className="md:w-1/2 w-full">
             <img
               className="w-full"
               src={'/images//launchpad/bg-zaya.png'}
@@ -114,14 +112,14 @@ function LaunchpadDetail() {
             <Timer className="justify-center" date={date} time={time} />
           </div>
 
-          <div className="grid grid-cols-3 gap-10 border-y-2 border-solid border-[#FFFFFF1A] py-[40px]">
+          <div className="grid grid-cols-3 max-md:grid-cols-2 gap-10 md:border-y-2 px-4 border rounded-3xl max-md:bg-[#12121233] border-solid border-[#FFFFFF1A] py-[40px]">
             {saleDetail.map((item, index) => {
               return (
                 <div key={index} className="flex flex-col gap-2">
-                  <Text className="text-[#FFFFFFB2] font-medium text-center !text-[26px]">
+                  <Text className="text-[#FFFFFFB2] font-medium text-center md:!text-[26px] !text-[18px]">
                     {item?.name}
                   </Text>
-                  <Text className="font-bold text-center !text-[40px]">
+                  <Text className="font-bold text-center md:!text-[40px] !text-[20px]">
                     {item?.price}
                   </Text>
                 </div>
@@ -145,8 +143,12 @@ function LaunchpadDetail() {
                       index % 2 !== 0 ? 'bg-inherit' : 'bg-[#121212B2]'
                     }  flex justify-between rounded-md px-4 py-6`}
                   >
-                    <Text className="text-[20px]">{content.title}</Text>
-                    <Text className="text-[20px]">{content.price}</Text>
+                    <Text className="text-[20px] w-[130px]">
+                      {content.title}
+                    </Text>
+                    <Text className="text-[20px] w-[130px]">
+                      {content.price}
+                    </Text>
                   </li>
                 )
               )}

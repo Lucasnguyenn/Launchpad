@@ -46,13 +46,13 @@ const Timer: FC<TimerProps> = ({
         </div>
         <Text>Minutes</Text>
       </div>
-      <div className={styles.item_wrapper}>
+      {/* <div className={styles.item_wrapper}>
         <div className={styles.number_wrapper}>
           <Text className={styles.item}>{Math.floor(seconds / 10)}</Text>
           <Text className={styles.item}>{seconds % 10}</Text>
         </div>
         <Text>Seconds</Text>
-      </div>
+      </div> */}
     </div>
   );
 };
