@@ -1,7 +1,10 @@
+import { useEffect, useState } from 'react';
+
 import { createColumnHelper } from '@tanstack/react-table';
 import { Table } from 'components/Table/Table';
 import { Text } from 'components/Text';
-import { useEffect, useMemo, useState } from 'react';
+
+import { useMediaQuery } from 'usehooks-ts';
 
 type Coin = {
   coin: {
@@ -73,7 +76,7 @@ const columns = [
   columnHelper.accessor('coin', {
     header: '',
     cell: (row) => (
-      <div className="flex items-center pl-10 gap-5 h-[50px]">
+      <div className="flex items-center pl-5 sm:pl-10 gap-5 h-[50px]">
         <img
           src={row.getValue().avatar}
           alt="coin avatar"
@@ -86,25 +89,25 @@ const columns = [
     ),
   }),
   columnHelper.accessor('chain', {
-    header: () => <Text type='heading5-bold'>Chain</Text>,
+    header: () => <Text type="heading5-bold">Chain</Text>,
     cell: (row) => (
-    //   <div className='h-[50px] flex justify-center w-full'>
-        <Text type="body1" className="text-white !text-[20px]">
-          {row.getValue()}
-        </Text>
-    //   </div>
+      //   <div className='h-[50px] flex justify-center w-full'>
+      <Text type="body1" className="text-white !text-[20px]">
+        {row.getValue()}
+      </Text>
+      //   </div>
     ),
   }),
   columnHelper.accessor('raise', {
-    header: () => <Text type='heading5-bold'>Raise</Text>,
+    header: () => <Text type="heading5-bold">Raise</Text>,
     cell: (row) => (
-      <Text type="body1" className="text-white !text-[20px]">
+      <Text type="body1" className="text-white !text-[18px] sm:!text-[20px]">
         {row.getValue()}
       </Text>
     ),
   }),
   columnHelper.accessor('status', {
-    header: () => <Text type='heading5-bold'>Status</Text>,
+    header: () => <Text type="heading5-bold">Status</Text>,
     cell: (row) => (
       //   <div className='relative flex items-center justify-center w-full'>
       //     <span className="status rounded-[20px] flex items-center justify-center py-3 px-6">
@@ -116,26 +119,37 @@ const columns = [
     ),
   }),
   columnHelper.accessor('ath', {
-    header: () => <Text type='heading5-bold'>ATH</Text>,
+    header: () => <Text type="heading5-bold">ATH</Text>,
     cell: (row) => (
-      <Text type="body1" className="text-white !text-[20px] !font-extrabold">
+      <Text type="body1" className="text-white !text-[18px] sm:!text-[20px] sm:!font-extrabold">
         {row.getValue()}
       </Text>
     ),
   }),
 ];
 
+const responsiveColumns = columns.filter(
+  (column) => column.accessorKey !== 'chain' && column.accessorKey !== 'status'
+);
+
 export const CoinTable = () => {
   const [data, setData] = useState(coins);
+  const isMobile = useMediaQuery('(max-width: 600px)');
 
   useEffect(() => {
     // fetch api here
     setData(coins);
   }, []);
 
+  console.log(responsiveColumns);
+
   return (
-    <div className='mt-7'>
-      <Table columns={columns} defaultData={data} />
+    <div className="mt-7">
+      {isMobile ? (
+        <Table columns={responsiveColumns} defaultData={data} />
+      ) : (
+        <Table columns={columns} defaultData={data} />
+      )}
     </div>
   );
 };
