@@ -23,7 +23,7 @@ export const Footer: FC<FooterProps> = ({ className }) => {
           <div className={styles.logo_wrapper}>
             <div className="flex items-center gap-5">
               <img
-                src={'images/logo/hub-global-pixel.png'}
+                src={'/images/logo/hub-global-pixel.png'}
                 alt="Footer logo"
                 className="w-[62px] h-auto"
               />

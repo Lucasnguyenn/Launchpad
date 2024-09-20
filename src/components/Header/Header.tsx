@@ -144,7 +144,7 @@ export function HeaderComponent() {
           <div className={styles.header}>
             <a title="logo" href={'/'} className="flex items-center gap-2">
               <img
-                src={Hubglobal}
+                src={'/images/logo/hub-global-pixel.png'}
                 alt="Main logo"
                 className="cursor-pointer h-12 w-auto"
               />
