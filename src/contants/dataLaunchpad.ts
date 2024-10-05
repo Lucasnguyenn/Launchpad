@@ -10,7 +10,7 @@ export const launchpadItem = [
       total: '200,000 USDT',
       symbol:'ZAYA',
       price: '0.2 USDT',
-      time:'August 15, 2024 - 10:00 (UTC)'
+      time:'Aug 15, 2024 - 10:00 (UTC)'
     },
     {
         background: '/images//launchpad/bg-reposwap.png',
@@ -22,7 +22,7 @@ export const launchpadItem = [
         total: '100,000 USDT',
         symbol:'REPX',
         price: '0.01 USDT',
-        time:'September 9, 2024 - 10:00 (UTC)'
+        time:'Sep 9, 2024 - 10:00 (UTC)'
       },
       {
         background: '/images//launchpad/bg-atr.png',
@@ -35,7 +35,7 @@ export const launchpadItem = [
         total: '200,000 USDT',
         symbol:'CLP',
         price: '0.07 USDT',
-        time:'September 4, 2024 - 10:00 (UTC)'
+        time:'Sep 4, 2024 - 10:00 (UTC)'
       },
       {
         background: '/images//launchpad/bg-cask.png',
@@ -60,7 +60,7 @@ export const launchpadItem = [
         total: '200,000 USDT',
         symbol:'U',
         price: '0.065 USDT',
-        time:'August 15, 2024 - 10:00 (UTC)'
+        time:'Aug 15, 2024 - 10:00 (UTC)'
       },
       {
         background: '/images//launchpad/bg-libera.png',
@@ -72,7 +72,7 @@ export const launchpadItem = [
         total: '30,000 USDT',
         symbol:'LIBE',
         price: '0.005 USDT',
-        time:'August 15, 2024 - 10:00 (UTC)'
+        time:'Aug 15, 2024 - 10:00 (UTC)'
       },
       {
         background: '/images//launchpad/bg-reental.png',
@@ -97,7 +97,7 @@ export const launchpadItem = [
         total: '150,000 USDT',
         symbol:'NOMOX',
         price: '0.08 USDT',
-        time:'August 26, 2024 - 10:00 (UTC)'
+        time:'Aug 26, 2024 - 10:00 (UTC)'
       },
       {
         background: '/images//launchpad/bg-coinpays.png',
@@ -110,7 +110,7 @@ export const launchpadItem = [
         total: '200,000 USDT',
         symbol:'CPY',
         price: '0.1 USDT',
-        time:'August 19, 2024 - 10:00 (UTC)'
+        time:'Aug 19, 2024 - 10:00 (UTC)'
       },
    
   ];

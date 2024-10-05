@@ -9508,6 +9508,7 @@ __metadata:
     ts-node: "npm:^10.9.1"
     ts-proto: "npm:^1.139.0"
     typescript: "npm:4.7.4"
+    usehooks-ts: "npm:^3.1.0"
     viem: "npm:^1.16.6"
     vite: "npm:^4.1.4"
     vite-plugin-svgr: "npm:^2.4.0"
@@ -15419,6 +15420,17 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
   checksum: 10/671e9c190aab9a8374a5d468c6ba17f52c38b6fae970110bc196fc1e2b57204149aea9619be49a1bb5207fb6e51d8afd19c3bcb94afe61813fed039821461dc0
+  languageName: node
+  linkType: hard
+
+"usehooks-ts@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "usehooks-ts@npm:3.1.0"
+  dependencies:
+    lodash.debounce: "npm:^4.0.8"
+  peerDependencies:
+    react: ^16.8.0  || ^17 || ^18
+  checksum: 10/6aef8affd3c053a3040b7421816dab85eb21601c5203496a705bafc32eb973fb519a2b0ddda527962e361d248f3a1c49df130620efe871c8f89e897451ed1cc7
   languageName: node
   linkType: hard
 

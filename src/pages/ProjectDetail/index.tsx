@@ -1,11 +1,28 @@
 import { Container } from 'components/Container';
+import { Tab, TabButton } from 'components/SimpleTab';
 import { Text } from 'components/Text';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useLocation } from 'react-router-dom';
 
+const tabItems: TabButton[] = [
+  {
+    label: 'Project Overview',
+    value: 'overview',
+  },
+  {
+    label: 'Update and Review',
+    value: 'update',
+  },
+  {
+    label: 'Token Launch',
+    value: 'launch',
+  },
+];
+
 const LaunchpadDetail = () => {
   const location = useLocation();
+  const [tab, setTab] = useState<TabButton>(tabItems[0]);
 
   return (
     <section className="relative bg-[--background-main] w-full h-full pt-[60px]">
@@ -82,27 +99,76 @@ const LaunchpadDetail = () => {
           </div>
         </div>
 
-        {/* Introduction */}
-        <div className='flex flex-col gap-6'>
-          <div className='flex flex-col gap-6'>
-            <Text type='heading4-semi-bold' className='text-primary'>Solution</Text>
-            <img src='/images/pitchdeck/solution-3.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
-            <img src='/images/pitchdeck/solution-4.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
-            <img src='/images/pitchdeck/solution-5.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
-            <img src='/images/pitchdeck/solution-6.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
-            <img src='/images/pitchdeck/solution-7.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+      
+        {/* Tabs */}
+        <Tab
+          list={tabItems}
+          onChange={setTab}
+          value={tab.value}
+          className="py-10 mt-10"
+        />
+
+        {/* Tab items */}
+        {tab.value === 'overview' && (
+         <div className='flex flex-col gap-6'>
+         <div className='flex flex-col gap-6'>
+           <Text type='heading4-semi-bold' className='text-primary'>Solution</Text>
+           <img src='/images/pitchdeck/solution-3.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+           <img src='/images/pitchdeck/solution-4.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+           <img src='/images/pitchdeck/solution-5.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+           <img src='/images/pitchdeck/solution-6.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+           <img src='/images/pitchdeck/solution-7.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+         </div>
+         <div className='flex flex-col gap-6'>
+           <Text type='heading4-semi-bold' className='text-primary'>Problem</Text>
+           <img src='/images/pitchdeck/problem-1.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+           <img src='/images/pitchdeck/problem-2.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+         </div>
+         <div className='flex flex-col gap-6'>
+           <Text type='heading4-semi-bold' className='text-primary'>More info</Text>
+           <img src='/images/pitchdeck/moreinfo-1.jpg' alt='intro 1' className='w-full h-auto rounded-[20px]' />
+           <img src='/images/pitchdeck/moreinfo-2.jpg' alt='intro 2' className='w-full h-auto rounded-[20px]' />
+         </div>
+       </div>
+        )}
+
+        {tab.value === 'update' && (
+          <div className="sm:w-4/5 h-[500px] flex mx-auto">
+            <div className="h-full flex flex-col items-end justify-between pr-5 border-r border-r-white border-solid">
+              <div className="flex flex-col items-end text-end text-nowrap">
+                <Text type="heading3-bold" className="text-primary">
+                Quarter 2
+                </Text>
+                <Text type="heading5-medium" className="text-primary">
+                  2024
+                </Text>
+              </div>
+
+              <div className="flex flex-col items-end text-end text-nowrap">
+                <Text type="heading3-bold" className="text-primary">
+                Quarter 3
+                </Text>
+                <Text type="heading5-medium" className="text-primary">
+                  2024
+                </Text>
+              </div>
+            </div>
+
+            <div className="h-full flex flex-col justify-between ml-5">
+              <div className="px-5 py-4 border border-solid border-[#989898] rounded-xl">
+                <Text type="body1" className="mt-5">
+                  R&D and completion of smart lockers using palm biometric technology
+                </Text>
+              </div>
+
+              <div>
+              <Text type="body1" className="mt-5">
+                Pilot locker installation at Vinata Tower apartment building, Hanoi University of Science and Technology and Royal City
+              </Text>
+              </div>
+            </div>
           </div>
-          <div className='flex flex-col gap-6'>
-            <Text type='heading4-semi-bold' className='text-primary'>Problem</Text>
-            <img src='/images/pitchdeck/problem-1.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
-            <img src='/images/pitchdeck/problem-2.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
-          </div>
-          <div className='flex flex-col gap-6'>
-            <Text type='heading4-semi-bold' className='text-primary'>More info</Text>
-            <img src='/images/pitchdeck/moreinfo-1.jpg' alt='intro 1' className='w-full h-auto rounded-[20px]' />
-            <img src='/images/pitchdeck/moreinfo-2.jpg' alt='intro 2' className='w-full h-auto rounded-[20px]' />
-          </div>
-        </div>
+        )}
       </Container>
     </section>
   );

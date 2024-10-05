@@ -64,7 +64,7 @@ function TimeLine() {
                   breakpoint: breakpointItem.sm,
                   settings: {
                     slidesToScroll: 2,
-                    slidesToShow: 2.25,
+                    slidesToShow: 2,
                   },
                 },
               ],

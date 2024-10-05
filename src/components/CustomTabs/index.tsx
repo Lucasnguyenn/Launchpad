@@ -22,11 +22,11 @@ export default function CustomTabs({
       onChange={setSelectedIndex}
       className={classNames({ [className as string]: !!className })}
     >
-      <TabList className="flex gap-[80px] justify-center">
+      <TabList className="flex md:gap-[80px] gap-8 justify-center">
         {data.map(({ name }) => (
           <Tab
             key={name}
-            className="text-[26px] font-semibold text-white data-[selected]:text-[#369CC6] data-[hover]:text-[#369CC6]"
+            className="md:text-[26px] text-xl font-semibold text-white data-[selected]:text-[#369CC6] data-[hover]:text-[#369CC6]"
           >
             {name}
           </Tab>
