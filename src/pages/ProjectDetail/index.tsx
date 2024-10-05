@@ -84,11 +84,24 @@ const LaunchpadDetail = () => {
 
         {/* Introduction */}
         <div className='flex flex-col gap-6'>
-            <Text type='heading4-semi-bold' className='text-primary'>Introduction</Text>
-            <img src='/images/project/meta365intro1.jpg' alt='intro 1' className='w-full h-auto rounded-[20px]' />
-            <img src='/images/project/meta365intro2.jpg' alt='intro 2' className='w-full h-auto rounded-[20px]' />
-            <Text type='heading4-semi-bold' className='text-primary'>Introduction</Text>
-            <img src='/images/project/meta365intro3.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+          <div className='flex flex-col gap-6'>
+            <Text type='heading4-semi-bold' className='text-primary'>Solution</Text>
+            <img src='/images/pitchdeck/solution-3.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+            <img src='/images/pitchdeck/solution-4.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+            <img src='/images/pitchdeck/solution-5.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+            <img src='/images/pitchdeck/solution-6.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+            <img src='/images/pitchdeck/solution-7.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+          </div>
+          <div className='flex flex-col gap-6'>
+            <Text type='heading4-semi-bold' className='text-primary'>Problem</Text>
+            <img src='/images/pitchdeck/problem-1.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+            <img src='/images/pitchdeck/problem-2.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+          </div>
+          <div className='flex flex-col gap-6'>
+            <Text type='heading4-semi-bold' className='text-primary'>More info</Text>
+            <img src='/images/pitchdeck/moreinfo-1.jpg' alt='intro 1' className='w-full h-auto rounded-[20px]' />
+            <img src='/images/pitchdeck/moreinfo-2.jpg' alt='intro 2' className='w-full h-auto rounded-[20px]' />
+          </div>
         </div>
       </Container>
     </section>
