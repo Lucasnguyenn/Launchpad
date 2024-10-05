@@ -99,6 +99,7 @@ const LaunchpadDetail = () => {
           </div>
         </div>
 
+      
         {/* Tabs */}
         <Tab
           list={tabItems}
@@ -109,94 +110,26 @@ const LaunchpadDetail = () => {
 
         {/* Tab items */}
         {tab.value === 'overview' && (
-          <div className="flex flex-col gap-6">
-            <Text type="heading4-semi-bold" className="text-primary">
-              Introduction
-            </Text>
-            <img
-              src="/images/project/meta365intro1.jpg"
-              alt="intro 1"
-              className="w-full h-auto rounded-[20px]"
-            />
-            <img
-              src="/images/project/meta365intro2.jpg"
-              alt="intro 2"
-              className="w-full h-auto rounded-[20px]"
-            />
-            <img
-              src="/images/project/meta365intro3.jpg"
-              alt="intro 3"
-              className="w-full h-auto rounded-[20px]"
-            />
-
-            <Text type="heading4-semi-bold" className="text-primary">
-              Problem
-            </Text>
-            <img
-              src="/images/project/meta365prob1.jpg"
-              alt="problem 1"
-              className="w-full h-auto rounded-[20px]"
-            />
-            <img
-              src="/images/project/meta365prob2.jpg"
-              alt="problem 2"
-              className="w-full h-auto rounded-[20px]"
-            />
-
-            <Text type="heading4-semi-bold" className="text-primary">
-              Solution
-            </Text>
-            <img
-              src="/images/project/meta365sol1.jpg"
-              alt="solution 1"
-              className="w-full h-auto rounded-[20px]"
-            />
-            <img
-              src="/images/project/meta365sol2.jpg"
-              alt="solution 2"
-              className="w-full h-auto rounded-[20px]"
-            />
-            <img
-              src="/images/project/meta365sol3.jpg"
-              alt="solution 3"
-              className="w-full h-auto rounded-[20px]"
-            />
-            <img
-              src="/images/project/meta365sol4.jpg"
-              alt="solution 4"
-              className="w-full h-auto rounded-[20px]"
-            />
-            <img
-              src="/images/project/meta365sol5.jpg"
-              alt="solution 5"
-              className="w-full h-auto rounded-[20px]"
-            />
-            <img
-              src="/images/project/meta365sol6.jpg"
-              alt="solution 6"
-              className="w-full h-auto rounded-[20px]"
-            />
-            <img
-              src="/images/project/meta365sol7.jpg"
-              alt="solution 7"
-              className="w-full h-auto rounded-[20px]"
-            />
-            <img
-              src="/images/project/meta365sol8.jpg"
-              alt="solution 8"
-              className="w-full h-auto rounded-[20px]"
-            />
-            <img
-              src="/images/project/meta365sol9.jpg"
-              alt="solution 9"
-              className="w-full h-auto rounded-[20px]"
-            />
-            <img
-              src="/images/project/meta365sol10.jpg"
-              alt="solution 10"
-              className="w-full h-auto rounded-[20px]"
-            />
+         <div className='flex flex-col gap-6'>
+          <div className='flex flex-col gap-6'>
+            <Text type='heading4-semi-bold' className='text-primary'>Problem</Text>
+            <img src='/images/pitchdeck/problem-1.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+            <img src='/images/pitchdeck/problem-2.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
           </div>
+          <div className='flex flex-col gap-6'>
+            <Text type='heading4-semi-bold' className='text-primary'>Solution</Text>
+            <img src='/images/pitchdeck/solution-3.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+            <img src='/images/pitchdeck/solution-4.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+            <img src='/images/pitchdeck/solution-5.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+            <img src='/images/pitchdeck/solution-6.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+            <img src='/images/pitchdeck/solution-7.jpg' alt='intro 3' className='w-full h-auto rounded-[20px]' />
+          </div>
+          <div className='flex flex-col gap-6'>
+            <Text type='heading4-semi-bold' className='text-primary'>More info</Text>
+            <img src='/images/pitchdeck/moreinfo-1.jpg' alt='intro 1' className='w-full h-auto rounded-[20px]' />
+            <img src='/images/pitchdeck/moreinfo-2.jpg' alt='intro 2' className='w-full h-auto rounded-[20px]' />
+          </div>
+       </div>
         )}
 
         {tab.value === 'update' && (
@@ -204,7 +137,7 @@ const LaunchpadDetail = () => {
             <div className="h-full flex flex-col items-end justify-between pr-5 border-r border-r-white border-solid">
               <div className="flex flex-col items-end text-end text-nowrap">
                 <Text type="heading3-bold" className="text-primary">
-                  Jul 19
+                Quarter 2
                 </Text>
                 <Text type="heading5-medium" className="text-primary">
                   2024
@@ -213,7 +146,7 @@ const LaunchpadDetail = () => {
 
               <div className="flex flex-col items-end text-end text-nowrap">
                 <Text type="heading3-bold" className="text-primary">
-                  Apr 21
+                Quarter 3
                 </Text>
                 <Text type="heading5-medium" className="text-primary">
                   2024
@@ -223,34 +156,15 @@ const LaunchpadDetail = () => {
 
             <div className="h-full flex flex-col justify-between ml-5">
               <div className="px-5 py-4 border border-solid border-[#989898] rounded-xl">
-                <div className="flex items-center gap-3">
-                  <img
-                    src="/images/project/dohoainam.png"
-                    alt="creator"
-                    className="w-[64px] h-[64px] object-cover object-center"
-                  />
-
-                  <div>
-                    <Text type="body1" className="text-white">
-                      Do Hoai Nam
-                    </Text>
-                    <Text type="body1" className="text-white">
-                      Founder of HOLD STATION
-                    </Text>
-                  </div>
-                </div>
-
                 <Text type="body1" className="mt-5">
-                  "Your blockchain project in the DeFi sector is truly
-                  impressive. It's revolutionizing financial accessibility and
-                  empowering users with decentralized solutions that are both
-                  innovative and impactful."
+                  R&D and completion of smart lockers using palm biometric technology
                 </Text>
               </div>
 
               <div>
-                <Text type="heading4-semi-bold">Launed in</Text>
-                <Text type="heading4-bold">Hub Global Launchpad</Text>
+              <Text type="body1" className="mt-5">
+                Pilot locker installation at Vinata Tower apartment building, Hanoi University of Science and Technology and Royal City
+              </Text>
               </div>
             </div>
           </div>

@@ -20,7 +20,7 @@ export function ProjectItem({ data }: Readonly<ProjectItemType>) {
 
   return (
     <Link
-      to={`/projects/${id}`}
+      to={`/projects/${title}`}
       className="min-w-[300px] w-full h-[500px] p-[16px] sm:p-[20px] rounded-2xl border border-solid border-[--white-10] flex flex-col gap-[12px] hover:bg-[--white-10]"
     >
       <div className="relative w-full">

@@ -7,6 +7,17 @@ import { ProjectItem } from './ProjectItem';
 
 const sampleData = [
   {
+    id: 0,
+    title: 'hublock',
+    thumbnail: 'images/project/banner.jpg',
+    cap: '$150k Valuation Cap',
+    tags: ['Web 2', 'logistic'],
+    content:
+      'HUBLOCK locker solution installed at: Apartments, offices, schools, public places... to send and receive goods at any time, reduce lastmile costs and increase security for goods',
+    raised: '--',
+    investors: '--',
+  },
+  {
     id: 1,
     title: 'Meta365',
     thumbnail: 'images/project/meta365.jpg',
@@ -118,7 +129,7 @@ export function Project() {
 
           {/* projects list */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sampleData.map((project) => (
+            {sampleData.map((project:any) => (
               <ProjectItem data={project} />
             ))}
           </div>
