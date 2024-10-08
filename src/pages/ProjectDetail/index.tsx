@@ -31,25 +31,23 @@ const LaunchpadDetail = () => {
           <div className="w-full max-w-[560px]">
             <div className="flex items-center gap-4">
               <img
-                src="/images/logo/meta365.png"
+                src="/images/logo/logo_hublock.jpg"
                 alt="coin logo"
-                className="w-[94px] h-auto"
+                className="w-[94px] h-auto rounded-lg"
               />
               <Text type="heading2-bold" className="text-primary !font-medium">
-                Meta365
+              Hublock
               </Text>
               <div className="rounded-[10px] p-[10px] text-white bg-[#3D3D3D]">
-                <Text type="body2">Web 3</Text>
+                <Text type="body2">Web 2</Text>
               </div>
               <div className="rounded-[10px] p-[10px] text-white bg-[#3D3D3D]">
-                <Text type="body2">RWA</Text>
+                <Text type="body2">Logistic</Text>
               </div>
             </div>
 
             <Text type="body1" className="text-white mt-4">
-              Revolutionizing the real estate market by providing individual
-              investors with a simple platform to build true passive income and
-              long-term value growth
+            HUBLOCK locker solution installed at: Apartments, offices, schools, public places... to send and receive goods at any time, reduce lastmile costs and increase security for goods
             </Text>
           </div>
 
@@ -66,7 +64,7 @@ const LaunchpadDetail = () => {
 
         <div className="flex items-center justify-between mt-10">
           <img
-            src="/images/project/meta365.jpg"
+            src="/images/project/banner.jpg"
             alt="project"
             className="rounded-[20px] w-full max-w-[640px] h-auto"
           />
