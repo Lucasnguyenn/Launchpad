@@ -9,9 +9,9 @@ const sampleData = [
   {
     id: 0,
     title: 'hublock',
-    thumbnail: 'images/project/banner.jpg',
+    thumbnail: '/images/project/banner.jpg',
     cap: '$150k Valuation Cap',
-    tags: ['Web 2', 'logistic'],
+    tags: ['Web 2', 'Logistic'],
     content:
       'HUBLOCK locker solution installed at: Apartments, offices, schools, public places... to send and receive goods at any time, reduce lastmile costs and increase security for goods',
     raised: '--',
@@ -20,7 +20,7 @@ const sampleData = [
   {
     id: 1,
     title: 'Meta365',
-    thumbnail: 'images/project/meta365.jpg',
+    thumbnail: '/images/project/meta365.jpg',
     cap: '$10M Valuation Cap',
     tags: ['Web 3', 'RWA'],
     content:
@@ -42,7 +42,7 @@ const sampleData = [
   {
     id: 3,
     title: 'Reental',
-    thumbnail: 'images/project/reental.png',
+    thumbnail: '/images/project/reental.png',
     cap: '$42M Valuation Cap',
     tags: ['Web 3', 'Real Estate', 'Fintech'],
     content: 'Tokenizing the $300tn real estate market, one property at a time',
@@ -52,7 +52,7 @@ const sampleData = [
   {
     id: 4,
     title: 'FuelGems',
-    thumbnail: 'images/project/fualgems.jpg',
+    thumbnail: '/images/project/fualgems.jpg',
     cap: '$13M Valuation Cap',
     tags: ['Energy', 'Web 3', 'Technology'],
     content:
@@ -63,7 +63,7 @@ const sampleData = [
   {
     id: 5,
     title: 'ZayaAI',
-    thumbnail: 'images/project/zayaai.jpg',
+    thumbnail: '/images/project/zayaai.jpg',
     cap: '$1M Valuation Cap',
     tags: ['Web 3', 'AI'],
     content:
@@ -74,7 +74,7 @@ const sampleData = [
   {
     id: 5,
     title: 'Coinpays',
-    thumbnail: 'images/project/coinpays.jpg',
+    thumbnail: '/images/project/coinpays.jpg',
     cap: '$10M Valuation Cap',
     tags: ['Web 3', 'Payments'],
     content:
