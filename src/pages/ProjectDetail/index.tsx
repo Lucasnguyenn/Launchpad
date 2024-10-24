@@ -36,7 +36,7 @@ const LaunchpadDetail = () => {
                 className="w-[94px] h-auto rounded-lg"
               />
               <Text type="heading2-bold" className="text-primary !font-medium">
-              Hublock
+              HUBLOCK
               </Text>
               <div className="rounded-[10px] p-[10px] text-white bg-[#3D3D3D]">
                 <Text type="body2">Web 2</Text>
@@ -91,7 +91,7 @@ const LaunchpadDetail = () => {
                 $ 10M
               </Text>
               <Text type="body1" className="text-white">
-                Valuation Gap
+                Valuation Cap
               </Text>
             </div>
           </div>
